@@ -62,14 +62,16 @@
       "name": "Projects",
       "items": [
         {
-          "name": "DoGi"
+          "name": "DoGi",
+          "description": "<a href='http://www.ittig.cnr.it/dogi/' target='_blank'>DoGi</a> is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset."
         },
         {
-          "name": "Smartarea"
+          "name": "Smartarea",
+          "description": "The activity performed in the <a href='http://www.smart-applications.area.pi.cnr.it/' target='_blank'>Smartarea</a> project consisted in the design and development of a <a href='http://wafi.iit.cnr.it/smartarea/' target='_blank'>3D-interactive map</a> built using Three.js that allows to find places and get directions within the CNR campus in Pisa."
         },
         {
           "name": "ASIA",
-          "description": "Analisi semantica dell'informazione per l'anti-evasione"
+          "description": "<a href='http://www.iit.cnr.it/node/22362' target='_blank'>ASIA</a> is a project focused on the collection and analysis of web information about people and commercial activities. Once data is retrieved from the web, it is used for enriching people and commercial activities profiles in order to highlights anomalies in term of tax evasion."
         }
       ]
     },
