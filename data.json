@@ -1,0 +1,119 @@
+{
+  "sections": [
+    {
+      "name": "About",
+      "items": [
+        {
+          "text": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My research interests are mainly focused on Web technologies, Semantic Web, Linked Data and Information Visualization."
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "items": [
+        {
+          "name": "PhD",
+          "university": "University of Pisa",
+          "years": "October 2013 - Present"
+        },
+        {
+          "name": "Master Degree",
+          "university": "University of Trento",
+          "years": "October 2011 - July 2013"
+        },
+        {
+          "name": "Bachelor Degree",
+          "university": "University of Milano Bicocca",
+          "years": "October 2008 - July 2011"
+        }
+      ]
+    },
+    {
+      "name": "Experience",
+      "items": [
+        {
+          "name": "Research fellow at National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
+          "place": "Pisa, Italy",
+          "years": "August 2013 - Present"
+        },
+        {
+          "name": "Intern at Department of Information Engineering and Computer Science (DISI)",
+          "place": "Trento, Italy",
+          "years": "March 2013 - June 2013"
+        },
+        {
+          "name": "Intern at Complex Systems and Artificial Intelligence (CSAI) Research Center",
+          "place": "Milan, Italy",
+          "years": "March 2011 - June 2011"
+        },
+        {
+          "name": "Software developer at Cooperativa Atipica",
+          "place": "Milan, Italy",
+          "years": "July 2008 - March 2009"
+        },
+        {
+          "name": "Software developer at Redix Informatica srl",
+          "place": "Milan, Italy",
+          "years": "July 2006 - June 2006"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "items": [
+        {
+          "name": "DoGi"
+        },
+        {
+          "name": "Smartarea"
+        },
+        {
+          "name": "ASIA",
+          "description": "Analisi semantica dell'informazione per l'anti-evasione"
+        }
+      ]
+    },
+    {
+      "name": "Publications",
+      "items": [
+        {
+          "name": "Linked Data Maps: Providing a Visual Entry Point for the Exploration of Datasets",
+          "authors": "Fabio Valsecchi, Matteo Abrate, Clara Bacciu, Maurizio Tesconi, Andrea Marchetti",
+          "conference": "2015, International Semantic Web Conference"
+        },
+        {
+          "name": "DBpedia Atlas: Mapping the Uncharted Lands of Linked Data",
+          "authors": "Fabio Valsecchi, Matteo Abrate, Clara Bacciu, Maurizio Tesconi, Andrea Marchetti",
+          "conference": "2015, Linked Data on the Web"
+        },
+        {
+          "name": "ASIA - An Investigation Platform for Exploiting Open Source Information in the Fight against Tax Evasion",
+          "authors": "Clara Bacciu, Fabio Valsecchi, Matteo Abrate, Maurizio Tesconi, Andrea Marchetti",
+          "conference": "2015, International Conference on Web Information System and Technologies"
+        },
+        {
+          "name": "Spacetime: a Two Dimensions Search and Visualisation Engine Based on Linked Data",
+          "authors": "Fabio Valsecchi, Marco Ronchetti",
+          "conference": "2014, International Conference on Advances in Semantic Processing"
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "items": [
+        {
+          "name": "Programming",
+          "list": "Javascript, Coffeescript, D3.js, PHP, HTML, CSS, Python"
+        },
+        {
+          "name": "Querying",
+          "list": "SQL, SPARQL"
+        },
+        {
+          "name": "Experience with",
+          "list": "Web API mashup, Semantic Web technologies (RDF, Turtle, N-triples, JSON-LD)"
+        }
+      ]
+    }
+  ]
+}

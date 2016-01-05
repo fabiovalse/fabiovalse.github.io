@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #2e2e2e;
+  background: #fbfbfb;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+svg {
+  font-family: 'Noto Serif';
+}
+
+#title {
+  font-family: 'Bree Serif';
+  font-size: 30px;
+  padding: 10px 70px 10px 10px
+}
+
+.section_menu {
+  fill: #fff;
+}
+.section_menu text {
+  pointer-events: none;
+  fill: #fbfbfb;
+}
+
+#databox {
+  width: 70%;
+  margin: auto;
+  margin-top: 100px; 
+  margin-bottom: 100px; 
+}
+#databox h3 {
+  font-family: 'Noto Serif';
+  padding-left: 5px;
+}
+#databox .item {
+  font-size: 15px;
+  margin: 5px;
+  text-align: justify;
+}
+
+.gray {
+  font-size: 14px;
+  color: #676767;
+}
