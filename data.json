@@ -4,7 +4,7 @@
       "name": "About",
       "items": [
         {
-          "text": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My research interests are mainly focused on Web technologies, Semantic Web, Linked Data and Information Visualization."
+          "text": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My interests are mainly focused on Web technologies and my research concers Information Visualization and Semantic Web."
         }
       ]
     },
@@ -62,16 +62,20 @@
       "name": "Projects",
       "items": [
         {
-          "name": "DoGi",
+          "name": "Linked Data DoGi <span class='gray'>(Inter-departmental project)</span>",
           "description": "<a href='http://www.ittig.cnr.it/dogi/' target='_blank'>DoGi</a> is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset."
         },
         {
-          "name": "Smartarea",
+          "name": "Smartarea <span class='gray'>(National project)</span>",
           "description": "The activity performed in the <a href='http://www.smart-applications.area.pi.cnr.it/' target='_blank'>Smartarea</a> project consists in the design and development of a <a href='http://wafi.iit.cnr.it/smartarea/' target='_blank'>3D-interactive map</a> built using Three.js that allows to find places and get directions within the CNR campus in Pisa."
         },
         {
-          "name": "ASIA",
+          "name": "ASIA <span class='gray'>(Regional project)</span>",
           "description": "<a href='http://www.iit.cnr.it/node/22362' target='_blank'>ASIA</a> is a project focused on the collection and analysis of web information about people and commercial activities. Once data is retrieved from the web, it is used to enrich people and commercial activities profiles in order to highlight tax evasion anomalies."
+        },
+        {
+          "name": "Linked Data Maps <span class='gray'>(Ph.D. research project)</span>",
+          "description": "This activity has the aim of creating a new way for exploring and navigating big Linked Data sets employing Information Visualization techniques. Two applications, <a target='_blank' href='http://wafi.iit.cnr.it/lod/dbpedia/atlas'>DBpedia Atlas</a> and <a target='_blank' href='http://wafi.iit.cnr.it/lod/linkedmdb/atlas'>LinkedMDB Atlas</a>, have been developed."
         }
       ]
     },
@@ -104,16 +108,16 @@
       "name": "Skills",
       "items": [
         {
-          "name": "Programming",
-          "list": "Javascript, Coffeescript, D3.js, PHP, HTML, CSS, Python"
+          "name": "Programming (<a class='gray' target='_blank' href='https://github.com/fabiovalse'>Github</a>, <a class='gray' target='_blank' href='http://bl.ocks.org/fabiovalse'>Gist collection</a>)",
+          "list": "Javascript, Coffeescript, D3.js, Leaflet.js, Three.js, HTML, CSS, PHP, Python"
         },
         {
           "name": "Querying",
-          "list": "SQL, SPARQL"
+          "list": "SQL, SPARQL, MongoDB query language"
         },
         {
           "name": "Experience with",
-          "list": "Web API mashup, Semantic Web technologies (RDF, Turtle, N-triples, JSON-LD)"
+          "list": "Web API mashup, Semantic Web technologies (RDF, Turtle, N-triples, JSON-LD), SketchUp"
         }
       ]
     }

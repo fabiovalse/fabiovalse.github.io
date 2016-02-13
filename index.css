@@ -54,6 +54,6 @@ svg {
 .gray a {
   color: #676767;
 }
-.gray a:hover {
-  color: #2e2e2e;
+a:hover {
+  text-decoration: none;
 }
