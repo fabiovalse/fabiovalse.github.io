@@ -1,59 +1,104 @@
-body {
-  margin: 0;
+body, html {
   padding: 0;
-  font-family: "Open Sans", sans-serif;
-  color: #2e2e2e;
-  background: #fbfbfb;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-svg {
-  font-family: 'Noto Serif';
-}
-
-#title {
-  font-family: 'Bree Serif';
-  font-size: 30px;
-  padding: 10px 70px 10px 10px
-}
-
-.section_menu {
-  fill: #fff;
-}
-.section_menu text {
-  pointer-events: none;
-  fill: #fbfbfb;
-}
-
-#databox {
-  width: 70%;
-  margin: auto;
-  margin-top: 100px; 
-  margin-bottom: 100px; 
-}
-#databox h3 {
-  font-family: 'Noto Serif';
-  padding-left: 5px;
-}
-#databox .item {
+  margin: 0;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
-  margin: 5px;
+  color: rgba(0,0,0,0.87);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.middle {
+  width: 50%;
+}
+.left, .right {
+  width: 25%;
+}
+.hidden {
+  display: none;
+}
+
+/* Header
+*/
+.header {
+  display: flex;
+  margin-top: 60px;
+}
+.header .bio {
+  width: 50%;
+  margin: auto;
+  padding: 12px 12px 35px 12px;
   text-align: justify;
 }
 
-.gray {
-  font-size: 14px;
-  color: #676767;
+/* Central
+*/
+.central {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-.gray a {
-  color: #676767;
+.node {
+  width: 100%;
+  display: flex;
+  padding: 3px 0px;
+  font-size: 13px;
 }
-a:hover {
-  text-decoration: none;
+.node .label {
+  text-align: right;
+  cursor: pointer;
+}
+.node .label div {
+  padding-right: 15px;
+}
+.node .info {
+  margin-top: 10px;
+}
+
+.node svg {
+  width: 100%;
+  background: #dfdfdf;
+}
+.node svg rect, .node svg circle {
+  fill: #606060;
+}
+
+.node .period {
+  font-size: 12px;
+  margin-left: 10px;
+}
+.node .period span {
+  color: rgba(0,0,0,0.54);
+}
+
+/* Legend
+*/
+.legend {
+  font-size: 12px;
+  fill: rgba(0,0,0,0.54);
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+/* types
+*/
+.Education {
+  color: #fb8072;
+  fill: #fb8072;
+}
+.Experience {
+  color: #80b1d3;
+  fill: #80b1d3;
+}
+.Project {
+  color: #fdb462; 
+  fill: #fdb462; 
+}
+.Publication {
+  color: #b3de69;
+  fill: #b3de69;
 }

@@ -1,103 +1,190 @@
-bar_w = 105
-bar_offset = 110
+body = d3.select 'body'
 
-height = 150
+main = body.append 'div'
+  .attrs
+    class: 'main'
 
+### Header
+###
+header = main.append 'div'
+  .attrs
+    class: 'header'
+
+header.append 'div'
+  .attrs
+      class: 'left'
+bio = header.append 'div'
+  .attrs
+    class: 'bio'
+header.append 'div'
+  .attrs
+      class: 'right'
+
+### Central
+###
+central = main.append 'div'
+  .attrs
+    class: 'central'
+
+time = d3.scaleTime()
+
+draw = (data) ->
+  ### Nodes
+  ###
+  nodes = central.selectAll '.node'
+    .data data
+
+  node_group = nodes.enter().append 'div'
+    .attrs
+      class: (d) -> 'node'
+
+  label = node_group.append 'div'
+    .attrs
+      class: 'label left'
+
+  label.append 'div'
+    .on 'click', (d) ->
+      if d3.select(this.parentNode.parentNode).select('.info').style('opacity') is '0'
+        d3.select(this.parentNode.parentNode).select('.info').transition()
+          .duration(500)
+          .styles
+            display: 'inline'
+          .transition()
+          .duration(1000)
+            .styles
+              opacity: 1
+      else
+        d3.select(this.parentNode.parentNode).select('.info').transition()
+          .duration(1000)
+          .styles
+            opacity: 0
+          .transition()
+          .duration(500)
+            .styles
+              display: 'none'
+    .html (d) -> if d.name.length > 20 then "#{d.name.slice(0,20)}... <i class='fa fa-circle #{d.type}' aria-hidden='true'></i>" else "#{d.name} <i class='fa fa-circle #{d.type}' aria-hidden='true'></i>"
+
+  ### Time ranges
+  ###
+  bar_height = 6
+
+  nodes_div = node_group.append 'div'
+    .attrs
+      class: 'middle'
+
+  svg = nodes_div.append 'svg'
+    .attrs
+      height: bar_height
+
+  ### Info
+  ###
+  nodes_div.append 'div'
+    .styles
+      opacity: 0
+      display: 'none'
+    .attrs
+      class: 'info'
+    #.classed 'hidden', true
+    .html (d) -> 
+      switch d.type
+        when 'Education' then "#{d.name} in #{d.title}<br>@#{d.location}"
+        when 'Experience' then "#{d.name}<br>@#{d.location}, #{d.place}"
+        when 'Project' then "#{d.description}"
+        when 'Publication' then "#{d.name}<br>#{d.authors.join(', ')}<br>@#{d.conference}, #{d.location}"
+        else ''
+
+  time.range [0, d3.select('.middle').node().getBoundingClientRect().width]
+
+  # range rects
+  ranges = svg.selectAll '.range'
+    .data (d) -> if d.timerange? then [d] else []
+
+  ranges.enter().append 'rect'
+    .attrs
+      class: 'range'
+      height: bar_height
+      width: (d) -> 
+        if d.timerange?
+          time(if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)) - time(new Date(d.timerange.start))
+      x: (d) -> 
+        if d.timerange?
+          time(new Date(d.timerange.start))
+
+  # points
+  points = svg.selectAll '.point'
+    .data (d) -> if d.date? then [d] else []
+
+  points.enter().append 'circle'
+    .attrs
+      r: bar_height/2
+      cx: (d) -> 
+        if d.date?
+          time(new Date(d.date))  
+      cy: bar_height/2
+
+  # periods
+  periods_div = node_group.append 'div'
+    .attrs
+      class: 'right'
+
+  periods = periods_div.selectAll '.period'
+    .data (d) -> [d]
+
+  en_periods = periods.enter().append 'div'
+    .attrs
+      class: 'period'
+    .html (d) -> 
+      if d.timerange?
+        if d.timerange.end isnt 'Present'
+          "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end.split(' ')[0].slice(0,3)} #{d.timerange.end.split(' ')[1]})"
+        else
+          "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end})"
+      else
+        "(#{d.date.split(' ')[0].slice(0,3)} #{d.date.split(' ')[1]})"
+
+### Data loading
+###
 d3.json 'data.json', (error, data) ->
   if error
     console.warn error
 
-  ## SETUP
-  svg = d3.select 'svg'
-  .attr
-    width: bar_offset*(data.sections.filter (d) -> d.name != "About").length
-    height: height
+  bio.text data.bio
 
-  color = d3.scale.ordinal()
-    .domain data.sections.filter (d) -> d.name != "About"
-    .range ["#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69"]
-
-  ## MENU
-  menu = svg.append 'g'
-
-  section_scale = d3.scale.linear()
-    .domain [0, (d3.max data.sections, (d) -> d.items.length)]
-    .range [40, height]
-
-  # SECTIONS: draw the name of the sections in a menù
-  sections = menu.selectAll '.section_menu'
-    .data data.sections.filter (d) -> d.name != "About"
-
-  bars = sections.enter().append 'g'
-    .attr
-      class: 'section_menu'
-      transform: (d,i) -> "translate(#{i*bar_offset}, 0)"
-
-  bars.append 'a'
-    .attr
-      'xlink:href': (d) -> "##{d.name}"
-    .append 'rect'
-      .attr
-        class: 'bar'
-        width: bar_w
-        height: (d) -> section_scale d.items.length
-        fill: (d) -> color d.name
-      .on 'mouseover', () ->
-        d3.select(this)
-          .transition().duration(300)
-          .style
-            opacity: 0.7
-      .on 'mouseout', () ->
-        d3.select(this)
-          .transition().duration(300)
-          .style
-            opacity: 1
+  # time scale
+  max = d3.max(
+    data.nodes.map(
+      (d) -> d3.max(
+        if d.timerange?
+          [new Date(d.timerange.start), if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)]
+        else
+          new Date(d.date)
+      )
+    )
+  )
+  min = d3.min(
+    data.nodes.map(
+      (d) -> d3.min(
+        if d.timerange?
+          [new Date(d.timerange.start), if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)]
+        else
+          new Date(d.date)
+      )
+    )
+  )
   
-  bars.append 'text'
-      .attr
-        'y': 20
-        'x': 4
-      .text (d) -> d.name
+  min = new Date(min).setMonth(min.getMonth() - 6)
+  max = new Date(max).setMonth(max.getMonth() + 6)
 
-  ## DATABOX: contains all the sections details
-  data.sections.map (section) ->
-    section.items.map (item) ->
-      item.parent = section
+  time
+    .domain [min, max]
 
-  databox = d3.select '#databox'
+  # Data drawing
+  draw data.nodes
 
-  section_databox = databox.selectAll '.section_databox'
-    .data data.sections
+  # Legend
+  legend = central.append 'div'
+    .attrs
+      class: 'legend'
+    .html "<span><i class='fa fa-circle Education' aria-hidden='true'></i> Education</span> <span><i class='fa fa-circle Experience' aria-hidden='true'></i> Experience</span> <span><i class='fa fa-circle Project' aria-hidden='true'></i> Project</span> <span><i class='fa fa-circle Publication' aria-hidden='true'></i> Publication</span>"
 
-  enter_sd = section_databox.enter().append 'div'
-    .attr
-      class: 'section_databox'
 
-  enter_sd.append 'a'
-    .attr
-      name: (d) -> d.name
-  enter_sd.append 'h3'
-    .style
-      background: (d) -> if d.name != "About" then color d.name
-      width: (d) -> "#{(section_scale d.items.length)*2}px"
-    .text (d) -> d.name
-
-  items = section_databox.selectAll '.item'
-    .data (d) -> d.items
-
-  items.enter().append 'div'
-    .attr
-      class: 'item'
-    .html (d) -> 
-      if d.parent.name is "Publications"
-        "<div class='gray'>#{d.authors}</div><div>#{d.name}</div><div class='gray'>#{d.conference}</div>"
-      else if d.parent.name is "Education"
-        "<div>#{d.name}</div><div class='gray'>#{d.university}, #{d.years}</div>"
-      else if d.parent.name is "Experience"
-        "<div>#{d.name}</div><div class='gray'>#{d.place}, #{d.years}</div>"
-      else if d.parent.name is "Projects"
-        "<div>#{d.name}</div><div class='gray'>#{d.description}</div>"
-      else if d.parent.name is "About"
-        "<div>#{d.text}</div>"
-      else if d.parent.name is "Skills"
-        "<div>#{d.name}</div><div class='gray'>#{d.list}</div>"

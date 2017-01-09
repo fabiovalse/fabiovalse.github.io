@@ -1,125 +1,200 @@
 {
-  "sections": [
+  "bio": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My interests are mainly focused on data visualization and Web technologies while my research activities cover Information Visualization and Semantic Web.",
+  "nodes": [
     {
-      "name": "About",
-      "items": [
-        {
-          "text": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My interests are mainly focused on Web technologies and my research concers Information Visualization and Semantic Web."
-        }
+      "type": "Education",
+      "name": "Ph.D.",
+      "title": "Information Engineering",
+      "location": "University of Pisa",
+      "timerange": {
+        "start": "October 2013",
+        "end": "Present"
+      }
+    },
+    {
+      "type": "Education",
+      "name": "Master Degree",
+      "title": "Computer Science",
+      "location": "University of Trento",
+      "timerange": {
+        "start": "October 2011",
+        "end": "July 2013"
+      }
+    },
+    {
+      "type": "Education",
+      "name": "Bachelor Degree",
+      "title": "Computer Science",
+      "location": "University of Milano Bicocca",
+      "timerange": {
+        "start": "October 2008",
+        "end": "July 2011"
+      }
+    },
+    {
+      "type": "Experience",
+      "name": "Research fellow",
+      "location": "National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
+      "place": "Pisa",
+      "timerange": {
+        "start": "August 2013",
+        "end": "Present"
+      }
+    },
+    {
+      "type": "Experience",
+      "name": "Intern",
+      "location": "Department of Information Engineering and Computer Science (DISI)",
+      "place": "Trento",
+      "timerange": {
+        "start": "March 2013",
+        "end": "June 2013"
+      }
+    },
+    {
+      "type": "Experience",
+      "name": "Intern",
+      "location": "Complex Systems and Artificial Intelligence (CSAI) Research Center",
+      "place": "Milano",
+      "timerange": {
+        "start": "March 2011",
+        "end": "June 2011"
+      }
+    },
+    {
+      "type": "Experience",
+      "name": "Software developer",
+      "location": "Cooperativa Atipica",
+      "place": "Milano",
+      "timerange": {
+        "start": "May 2007",
+        "end": "March 2008"
+      }
+    },
+    {
+      "type": "Experience",
+      "name": "Software developer",
+      "location": "Redix Information SRL",
+      "place": "Milano",
+      "timerange": {
+        "start": "June 2006",
+        "end": "July 2006"
+      }
+    },
+    {
+      "type": "Project",
+      "name": "Totus Mundus",
+      "category": "Research project",
+      "description": "...",
+      "timerange": {
+        "start": "November 2016",
+        "end": "November 2017"
+      },
+      "links": []
+    },
+    {
+      "type": "Project",
+      "name": "Linked Data DoGi",
+      "category": "Inter-departmental project",
+      "description": "DoGi is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
+      "timerange": {
+        "start": "November 2015",
+        "end": "November 2016"
+      },
+      "links": [
+        "http://www.dogi.cnr.it",
+        "http://www.ittig.cnr.it/dogi/"
       ]
     },
     {
-      "name": "Education",
-      "items": [
-        {
-          "name": "PhD",
-          "university": "University of Pisa",
-          "years": "October 2013 - Present"
-        },
-        {
-          "name": "Master Degree",
-          "university": "University of Trento",
-          "years": "October 2011 - July 2013"
-        },
-        {
-          "name": "Bachelor Degree",
-          "university": "University of Milano Bicocca",
-          "years": "October 2008 - July 2011"
-        }
+      "type": "Project",
+      "name": "Clavius on the web",
+      "category": "Research project",
+      "description": "...",
+      "timerange": {
+        "start": "September 2015",
+        "end": "March 2017"
+      },
+      "links": []
+    },
+    {
+      "type": "Project",
+      "name": "Smartarea",
+      "category": "National project",
+      "description": "The activity performed in the Smartarea project consists in the design and development of a 3D-interactive map built using Three.js that allows to find places and get directions within the CNR campus in Pisa.",
+      "timerange": {
+        "start": "March 2015",
+        "end": "March 2017"
+      },
+      "links": [
+        "http://www.smart-applications.area.pi.cnr.it/",
+        "http://wafi.iit.cnr.it/smartarea/"
       ]
     },
     {
-      "name": "Experience",
-      "items": [
-        {
-          "name": "Research fellow at National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
-          "place": "Pisa, Italy",
-          "years": "August 2013 - Present"
-        },
-        {
-          "name": "Intern at Department of Information Engineering and Computer Science (DISI)",
-          "place": "Trento, Italy",
-          "years": "March 2013 - June 2013"
-        },
-        {
-          "name": "Intern at Complex Systems and Artificial Intelligence (CSAI) Research Center",
-          "place": "Milan, Italy",
-          "years": "March 2011 - June 2011"
-        },
-        {
-          "name": "Software developer at Cooperativa Atipica",
-          "place": "Milan, Italy",
-          "years": "July 2008 - March 2009"
-        },
-        {
-          "name": "Software developer at Redix Informatica srl",
-          "place": "Milan, Italy",
-          "years": "July 2006 - June 2006"
-        }
+      "type": "Project",
+      "name": "Fractal Maps",
+      "category": "Ph.D. research project",
+      "description": "This activity has the aim of creating a new way for exploring and navigating big Linked Data sets employing Information Visualization techniques. Two applications, DBpedia Atlas and LinkedMDB Atlas, have been developed.",
+      "timerange": {
+        "start": "January 2014",
+        "end": "October 2016"
+      },
+      "links": [
+        "http://wafi.iit.cnr.it/lod/dbpedia/atlas",
+        "http://wafi.iit.cnr.it/lod/linkedmdb/atlas"
       ]
     },
     {
-      "name": "Projects",
-      "items": [
-        {
-          "name": "Linked Data DoGi <span class='gray'>(Inter-departmental project)</span>",
-          "description": "<a href='http://www.ittig.cnr.it/dogi/' target='_blank'>DoGi</a> is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset."
-        },
-        {
-          "name": "Smartarea <span class='gray'>(National project)</span>",
-          "description": "The activity performed in the <a href='http://www.smart-applications.area.pi.cnr.it/' target='_blank'>Smartarea</a> project consists in the design and development of a <a href='http://wafi.iit.cnr.it/smartarea/' target='_blank'>3D-interactive map</a> built using Three.js that allows to find places and get directions within the CNR campus in Pisa."
-        },
-        {
-          "name": "ASIA <span class='gray'>(Regional project)</span>",
-          "description": "<a href='http://www.iit.cnr.it/node/22362' target='_blank'>ASIA</a> is a project focused on the collection and analysis of web information about people and commercial activities. Once data is retrieved from the web, it is used to enrich people and commercial activities profiles in order to highlight tax evasion anomalies."
-        },
-        {
-          "name": "Linked Data Maps <span class='gray'>(Ph.D. research project)</span>",
-          "description": "This activity has the aim of creating a new way for exploring and navigating big Linked Data sets employing Information Visualization techniques. Two applications, <a target='_blank' href='http://wafi.iit.cnr.it/lod/dbpedia/atlas'>DBpedia Atlas</a> and <a target='_blank' href='http://wafi.iit.cnr.it/lod/linkedmdb/atlas'>LinkedMDB Atlas</a>, have been developed."
-        }
-      ]
+      "type": "Project",
+      "name": "ASIA",
+      "category": "Research project",
+      "description": "...",
+      "timerange": {
+        "start": "August 2013",
+        "end": "February 2015"
+      },
+      "links": []
     },
     {
-      "name": "Publications",
-      "items": [
-        {
-          "name": "Linked Data Maps: Providing a Visual Entry Point for the Exploration of Datasets",
-          "authors": "Fabio Valsecchi, Matteo Abrate, Clara Bacciu, Maurizio Tesconi, Andrea Marchetti",
-          "conference": "2015, International Semantic Web Conference"
-        },
-        {
-          "name": "DBpedia Atlas: Mapping the Uncharted Lands of Linked Data",
-          "authors": "Fabio Valsecchi, Matteo Abrate, Clara Bacciu, Maurizio Tesconi, Andrea Marchetti",
-          "conference": "2015, Linked Data on the Web"
-        },
-        {
-          "name": "ASIA - An Investigation Platform for Exploiting Open Source Information in the Fight against Tax Evasion",
-          "authors": "Clara Bacciu, Fabio Valsecchi, Matteo Abrate, Maurizio Tesconi, Andrea Marchetti",
-          "conference": "2015, International Conference on Web Information System and Technologies"
-        },
-        {
-          "name": "Spacetime: a Two Dimensions Search and Visualisation Engine Based on Linked Data",
-          "authors": "Fabio Valsecchi, Marco Ronchetti",
-          "conference": "2014, International Conference on Advances in Semantic Processing"
-        }
-      ]
+      "type": "Publication",
+      "name": "Text Encoder and Annotator: an all-in-one editor for transcribing and annotating manuscripts with RDF (Extended Version)",
+      "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Silvia Piccini", "Andrea Marchetti"],
+      "conference": "European Semantic Web Conference",
+      "location": "Crete, Greece",
+      "date": "June 2016"
     },
     {
-      "name": "Skills",
-      "items": [
-        {
-          "name": "Programming (<a class='gray' target='_blank' href='https://github.com/fabiovalse'>Github</a>, <a class='gray' target='_blank' href='http://bl.ocks.org/fabiovalse'>Gist collection</a>)",
-          "list": "Javascript, Coffeescript, D3.js, Leaflet.js, Three.js, HTML, CSS, PHP, Python"
-        },
-        {
-          "name": "Querying",
-          "list": "SQL, SPARQL, MongoDB query language"
-        },
-        {
-          "name": "Experience with",
-          "list": "Web API mashup, Semantic Web technologies (RDF, Turtle, N-triples, JSON-LD), SketchUp"
-        }
-      ]
+      "type": "Publication",
+      "name": "Linked Data Maps: Providing a Visual Entry Point for the Exploration of Datasets",
+      "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Maurizio Tesconi", "Andrea Marchetti"],
+      "conference": "International Semantic Web Conference",
+      "location": "Bethlehem, Pennsylvania, USA",
+      "date": "October 2015"
+    },
+    {
+      "type": "Publication",
+      "name": "DBpedia Atlas: Mapping the Uncharted Lands of Linked Data",
+      "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Maurizio Tesconi", "Andrea Marchetti"],
+      "conference": "International World Wide Web Conference",
+      "location": "Florence, Italy",
+      "date": "May 2015"
+    },
+    {
+      "type": "Publication",
+      "name": "ASIA - An Investigation Platform for Exploiting Open Source Information in the Fight against Tax Evasion",
+      "authors": ["Clara Bacciu", "Fabio Valsecchi", "Matteo Abrate", "Maurizio Tesconi", "Andrea Marchetti"],
+      "conference": "International Conference on Web Information System and Technologies",
+      "location": "Lisbon, Portugal",
+      "date": "May 2015"
+    },
+    {
+      "type": "Publication",
+      "name": "Spacetime: a Two Dimensions Search and Visualisation Engine Based on Linked Data",
+      "authors": ["Fabio Valsecchi", "Marco Ronchetti"],
+      "conference": "International Conference on Advances in Semantic Processing",
+      "location": "Rome, Italy",
+      "date": "August 2014"
     }
   ]
 }
