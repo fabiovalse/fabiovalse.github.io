@@ -1,146 +1,99 @@
-body = d3.select 'body'
+width = d3.select('body').node().getBoundingClientRect().width
+height = d3.select('body').node().getBoundingClientRect().height
 
-main = body.append 'div'
-  .attrs
-    class: 'main'
+svg = d3.select 'svg'
 
-### Header
-###
-header = main.append 'div'
-  .attrs
-    class: 'header'
-
-header.append 'div'
-  .attrs
-      class: 'left'
-bio = header.append 'div'
-  .attrs
-    class: 'bio'
-header.append 'div'
-  .attrs
-      class: 'right'
-
-### Central
-###
-central = main.append 'div'
-  .attrs
-    class: 'central'
+sorting = svg.append 'g'
+vis = svg.append 'g'
 
 time = d3.scaleTime()
+axis_top = null
+axis = null
+grid = null
 
-draw = (data) ->
+bar_height = 6
+
+draw = (data, sorting) ->
+  if sorting
+    data = data.sort (a,b) -> 
+      if a.type is 'Publication' and b.type is 'Publication'
+        time(new Date(a.date)) - time(new Date(b.date))
+      else if a.type is 'Publication'
+        time(new Date(a.date)) - time(new Date(b.timerange.start))
+      else if b.type is 'Publication'
+        time(new Date(a.timerange.start)) - time(new Date(b.date))
+      else
+        time(new Date(a.timerange.start)) - time(new Date(b.timerange.start))
+
   ### Nodes
   ###
-  nodes = central.selectAll '.node'
-    .data data
+  nodes = vis.selectAll '.node'
+    .data data, (d,i) -> "#{d.name}_#{i}"
 
-  node_group = nodes.enter().append 'div'
+  en_nodes = nodes.enter().append 'g'
     .attrs
       class: (d) -> 'node'
 
-  label = node_group.append 'div'
+  all_nodes = en_nodes.merge nodes
     .attrs
-      class: 'label left'
+      transform: (d,i) -> "translate(#{width*0.25}, #{(i+1)*20})"
 
-  label.append 'div'
-    .on 'click', (d) ->
-      if d3.select(this.parentNode.parentNode).select('.info').style('opacity') is '0'
-        d3.select(this.parentNode.parentNode).select('.info').transition()
-          .duration(500)
-          .styles
-            display: 'inline'
-          .transition()
-          .duration(1000)
-            .styles
-              opacity: 1
-      else
-        d3.select(this.parentNode.parentNode).select('.info').transition()
-          .duration(1000)
-          .styles
-            opacity: 0
-          .transition()
-          .duration(500)
-            .styles
-              display: 'none'
-    .html (d) -> if d.name.length > 20 then "#{d.name.slice(0,20)}... <i class='fa fa-circle #{d.type}' aria-hidden='true'></i>" else "#{d.name} <i class='fa fa-circle #{d.type}' aria-hidden='true'></i>"
+  en_nodes.append 'a'
+    .attrs
+      href: (d,i) -> "##{i}"
+    .append 'text'
+      .attrs
+        class: 'label'
+        x: -20
+        'text-anchor': 'end'
+      .html (d) -> if d.name.length > 20 then "#{d.name.slice(0,20)}..." else "#{d.name}"
+  
+  en_nodes.append 'circle'
+    .attrs
+      class: (d) -> d.type
+      cx: -10
+      cy: -4
+      r: 5
+
+  nodes.exit().remove()
 
   ### Time ranges
   ###
-  bar_height = 6
-
-  nodes_div = node_group.append 'div'
+  en_nodes.append 'rect'
     .attrs
-      class: 'middle'
-
-  svg = nodes_div.append 'svg'
-    .attrs
+      class: 'background'
+      width: "#{width*0.5}"
       height: bar_height
+      y: -7
+#    .on 'click', () ->
+#      draw data, true
 
-  ### Info
-  ###
-  nodes_div.append 'div'
-    .styles
-      opacity: 0
-      display: 'none'
+  en_nodes.append 'rect'
     .attrs
-      class: 'info'
-    #.classed 'hidden', true
-    .html (d) -> 
-      switch d.type
-        when 'Education' then "#{d.name} in #{d.title}<br>@#{d.location}"
-        when 'Experience' then "#{d.name}<br>@#{d.location}, #{d.place}"
-        when 'Project' then "#{d.description}"
-        when 'Publication' then "#{d.name}<br>#{d.authors.join(', ')}<br>@#{d.conference}, #{d.location}"
-        else ''
-
-  time.range [0, d3.select('.middle').node().getBoundingClientRect().width]
-
-  # range rects
-  ranges = svg.selectAll '.range'
-    .data (d) -> if d.timerange? then [d] else []
-
-  ranges.enter().append 'rect'
-    .attrs
-      class: 'range'
-      height: bar_height
+      class: 'foreground'
+      height: (d) -> if d.type is 'Publication' then bar_height*2 else bar_height
       width: (d) -> 
-        if d.timerange?
-          time(if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)) - time(new Date(d.timerange.start))
+        if d.type is 'Publication'
+          return 3
+        else if d.timerange?
+          return time(if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)) - time(new Date(d.timerange.start))
+      y: (d) -> if d.type is 'Publication' then -10 else -7
       x: (d) -> 
-        if d.timerange?
-          time(new Date(d.timerange.start))
-
-  # points
-  points = svg.selectAll '.point'
-    .data (d) -> if d.date? then [d] else []
-
-  points.enter().append 'circle'
-    .attrs
-      r: bar_height/2
-      cx: (d) -> 
-        if d.date?
-          time(new Date(d.date))  
-      cy: bar_height/2
-
-  # periods
-  periods_div = node_group.append 'div'
-    .attrs
-      class: 'right'
-
-  periods = periods_div.selectAll '.period'
-    .data (d) -> [d]
-
-  en_periods = periods.enter().append 'div'
-    .attrs
-      class: 'period'
-    .html (d) -> 
-      if d.timerange?
-        if d.timerange.end isnt 'Present'
-          "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end.split(' ')[0].slice(0,3)} #{d.timerange.end.split(' ')[1]})"
+        if d.type is 'Publication'
+          return time(new Date(d.date))
+        else if d.timerange?
+          return time(new Date(d.timerange.start))
+    .append 'title'
+      .html (d) -> 
+        if d.type is 'Publication'
+          d.date
+        else if d.timerange?
+          if d.timerange.end isnt 'Present'
+            "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end.split(' ')[0].slice(0,3)} #{d.timerange.end.split(' ')[1]})"
+          else
+            "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end})"
         else
-          "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end})"
-      else
-        "(#{d.date.split(' ')[0].slice(0,3)} #{d.date.split(' ')[1]})"
+          "(#{d.date.split(' ')[0].slice(0,3)} #{d.date.split(' ')[1]})"
 
 ### Data loading
 ###
@@ -148,7 +101,15 @@ d3.json 'data.json', (error, data) ->
   if error
     console.warn error
 
-  bio.text data.bio
+  d3.select '.header .bio'
+    .text data.bio
+
+  # svg height
+  header_h = d3.select('.header').node().getBoundingClientRect().height
+
+  svg
+    .styles
+      height: height - header_h
 
   # time scale
   max = d3.max(
@@ -177,14 +138,63 @@ d3.json 'data.json', (error, data) ->
 
   time
     .domain [min, max]
+    .range [0, width*0.5]
 
-  # Data drawing
+  axis_top = d3.axisBottom(time)
+
+  axis = vis.append 'g'
+    .attrs
+      transform: "translate(#{width*0.25}, #{data.nodes.length*(bar_height+15)})"
+    .call axis_top
+
+  grid = axis.append 'g'
+    .attrs
+      class: 'grid'
+    .call(axis_top
+      .tickSize -(data.nodes.length+1)*30
+      .tickFormat '')
+
+  # SVG Visualization
   draw data.nodes
 
-  # Legend
-  legend = central.append 'div'
+  # HTML Information 
+  info = d3.select '.inner_info'
+
+  items = info.selectAll '.item'
+    .data data.nodes
+
+  en_items = items.enter().append 'div'
     .attrs
-      class: 'legend'
-    .html "<span><i class='fa fa-circle Education' aria-hidden='true'></i> Education</span> <span><i class='fa fa-circle Experience' aria-hidden='true'></i> Experience</span> <span><i class='fa fa-circle Project' aria-hidden='true'></i> Project</span> <span><i class='fa fa-circle Publication' aria-hidden='true'></i> Publication</span>"
+      id: (d,i) -> "#{i}"
+      class: 'item'
 
+  all_items = en_items.merge(items)
 
+  en_items.append 'div'
+    .attrs
+      class: (d) -> "circle #{d.type}"
+
+  en_items.append 'div'
+    .attrs
+      class: 'title justified'
+    .text (d) -> d.name
+
+  en_items.append 'div'
+    .attrs
+      class: 'description'
+    .html (d) -> 
+      str = switch d.type
+        when 'Publication' then "<div class='subtitle'>@#{d.conference}, #{d.location}, #{d.date}</div><div class='justified'>#{d.abstract}</div>"
+        when 'Education' then "<div class='subtitle'>@#{d.location} in #{d.title}</div><div class='justified'>#{d.description}</div>"
+        when 'Experience' then "<div class='subtitle'>@#{d.location} in #{d.place}</div>"
+        else ''
+
+      if d.imgs?
+        str += "<div class='imgs'>"
+        for img in d.imgs
+          str += "<img src='img/#{img}'>"
+        str += "</div>"
+
+      return str
+
+  items.exit().remove()

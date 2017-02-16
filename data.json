@@ -1,21 +1,24 @@
 {
-  "bio": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) working in a group called Web Applications for the Future Internet (WAFI). In the mean time I'm a third year Ph.D. student in Information Engineering at the University of Pisa. My interests are mainly focused on data visualization and Web technologies while my research activities cover Information Visualization and Semantic Web.",
+  "bio": "I'm a temporary research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR). In particular, I work in a group called Web Applications for the Future Internet (WAFI). I received my Ph.D. in Information Engineering at the University of Pisa by presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies while my research activities currently cover Information Visualization and Semantic Web.",
   "nodes": [
     {
       "type": "Education",
       "name": "Ph.D.",
       "title": "Information Engineering",
       "location": "University of Pisa",
+      "description": "My thesis, Interactive Visualization of Semantic Web Data, presents a method based on cartographic principles for visually representing and exploring Linked Data sets as they were traditional geographic maps.",
       "timerange": {
         "start": "October 2013",
-        "end": "Present"
-      }
+        "end": "January 2017"
+      },
+      "imgs": ["dbpedia.png", "linkedmdb.png"]
     },
     {
       "type": "Education",
       "name": "Master Degree",
       "title": "Computer Science",
       "location": "University of Trento",
+      "description": "",
       "timerange": {
         "start": "October 2011",
         "end": "July 2013"
@@ -44,16 +47,6 @@
     {
       "type": "Experience",
       "name": "Intern",
-      "location": "Department of Information Engineering and Computer Science (DISI)",
-      "place": "Trento",
-      "timerange": {
-        "start": "March 2013",
-        "end": "June 2013"
-      }
-    },
-    {
-      "type": "Experience",
-      "name": "Intern",
       "location": "Complex Systems and Artificial Intelligence (CSAI) Research Center",
       "place": "Milano",
       "timerange": {
@@ -63,9 +56,8 @@
     },
     {
       "type": "Experience",
-      "name": "Software developer",
-      "location": "Cooperativa Atipica",
-      "place": "Milano",
+      "name": "Freelance developer",
+      "description": "Cooperativa Atipica",
       "timerange": {
         "start": "May 2007",
         "end": "March 2008"
@@ -73,9 +65,9 @@
     },
     {
       "type": "Experience",
-      "name": "Software developer",
+      "name": "Intern",
       "location": "Redix Information SRL",
-      "place": "Milano",
+      "place": "Lissone (MI)",
       "timerange": {
         "start": "June 2006",
         "end": "July 2006"
@@ -88,7 +80,7 @@
       "description": "...",
       "timerange": {
         "start": "November 2016",
-        "end": "November 2017"
+        "end": "Present"
       },
       "links": []
     },
@@ -99,7 +91,7 @@
       "description": "DoGi is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
       "timerange": {
         "start": "November 2015",
-        "end": "November 2016"
+        "end": "Present"
       },
       "links": [
         "http://www.dogi.cnr.it",
@@ -113,7 +105,7 @@
       "description": "...",
       "timerange": {
         "start": "September 2015",
-        "end": "March 2017"
+        "end": "Present"
       },
       "links": []
     },
@@ -124,25 +116,11 @@
       "description": "The activity performed in the Smartarea project consists in the design and development of a 3D-interactive map built using Three.js that allows to find places and get directions within the CNR campus in Pisa.",
       "timerange": {
         "start": "March 2015",
-        "end": "March 2017"
+        "end": "Present"
       },
       "links": [
         "http://www.smart-applications.area.pi.cnr.it/",
         "http://wafi.iit.cnr.it/smartarea/"
-      ]
-    },
-    {
-      "type": "Project",
-      "name": "Fractal Maps",
-      "category": "Ph.D. research project",
-      "description": "This activity has the aim of creating a new way for exploring and navigating big Linked Data sets employing Information Visualization techniques. Two applications, DBpedia Atlas and LinkedMDB Atlas, have been developed.",
-      "timerange": {
-        "start": "January 2014",
-        "end": "October 2016"
-      },
-      "links": [
-        "http://wafi.iit.cnr.it/lod/dbpedia/atlas",
-        "http://wafi.iit.cnr.it/lod/linkedmdb/atlas"
       ]
     },
     {
@@ -160,6 +138,7 @@
       "type": "Publication",
       "name": "Text Encoder and Annotator: an all-in-one editor for transcribing and annotating manuscripts with RDF (Extended Version)",
       "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Silvia Piccini", "Andrea Marchetti"],
+      "abstract": "In the context of the digitization of manuscripts, transcription and annotation are often distinct, sequential steps. This could lead to difficulties in improving the transcribed text when annotations have already been defined. In order to avoid this, we devised an approach which merges the two steps into the same process. Text Encoder and Annotator (TEA) is a prototype application embracing this concept. TEA is based on a lightweight language syntax which annotates text using Semantic Web technologies. Our approach is currently being developed within the Clavius on the Web project, devoted to studying the manuscripts of Christophorus Clavius, an influential 16th century mathematician and astronomer.",
       "conference": "European Semantic Web Conference",
       "location": "Crete, Greece",
       "date": "June 2016"
@@ -168,6 +147,7 @@
       "type": "Publication",
       "name": "Linked Data Maps: Providing a Visual Entry Point for the Exploration of Datasets",
       "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Maurizio Tesconi", "Andrea Marchetti"],
+      "abstract": "Linked Data sets are an ever-growing, invaluable source of information and knowledge. However, the wide adoption of this large amount of interlinked structured data is still held back by some non trivial obstacles. The one we tackle in this article is the difficulty users have in getting started with their work on Linked Data sources. In fact, querying, and in general dealing with such datasets, requires a deep knowledge about their specific classes, instances and properties. We believe that an entry point that eases the access to such information would significantly reduce the barriers around this technology and foster its promotion. Linked Data Maps is a method for representing RDF graphs as interactive, map-like visualizations, based on our previous work focused on the visual exploration of DBpedia. The approach is extended to deal with a wider range of Linked Data sets, and tested with a user evaluation study on two distinct RDF graphs.",
       "conference": "International Semantic Web Conference",
       "location": "Bethlehem, Pennsylvania, USA",
       "date": "October 2015"
@@ -176,6 +156,7 @@
       "type": "Publication",
       "name": "DBpedia Atlas: Mapping the Uncharted Lands of Linked Data",
       "authors": ["Fabio Valsecchi", "Matteo Abrate", "Clara Bacciu", "Maurizio Tesconi", "Andrea Marchetti"],
+      "abstract": "The available Linked Open Data sources have extremely increased in the last few years. However, finding an effective and efficient way for exploring them still remains an open research issue, due to their complexity and volume. We propose a solution that tries to solve the problem using a visual and interactive exploration tool based on cartographic and information visualisation techniques. In particular, we present an ongoing design study for creating a map of DBpedia.",
       "conference": "International World Wide Web Conference",
       "location": "Florence, Italy",
       "date": "May 2015"
@@ -184,6 +165,7 @@
       "type": "Publication",
       "name": "ASIA - An Investigation Platform for Exploiting Open Source Information in the Fight against Tax Evasion",
       "authors": ["Clara Bacciu", "Fabio Valsecchi", "Matteo Abrate", "Maurizio Tesconi", "Andrea Marchetti"],
+      "abstract": "Tax evasion is a widespread phenomenon confirmed by numerous European and American reports. To contrast it, governments already adopt software solutions that support tax inspectors in their investigations. However, the currently existing systems do not normally take advantage of the constant stream of data published on the Web. Instead, the ASIA project aims to prove the effectiveness of combining this kind of open source information with official data contained in Public Administration archives to fight tax evasion. Our prototype platform deals with two cases of investigation, people and businesses. Public officers have been involved throughout the project, and took part in a preliminary test phase which showed very promising results.",
       "conference": "International Conference on Web Information System and Technologies",
       "location": "Lisbon, Portugal",
       "date": "May 2015"
@@ -192,6 +174,7 @@
       "type": "Publication",
       "name": "Spacetime: a Two Dimensions Search and Visualisation Engine Based on Linked Data",
       "authors": ["Fabio Valsecchi", "Marco Ronchetti"],
+      "abstract": "DBpedia is one of the most interesting projects in the arena of the Semantic technologies. However, being able to extract useful information from it is not a trivial task for a user without a specific competence. We present the Spacetime, a two dimensions search engine that provides a simple visualization user interface for making it easy for a generic user to perform certain types of queries on the DBpedia body, and having results shown in a graphic and animated form. Spacetime has been equipped with various features, such as heat maps, time sliding animations, map aggregations, icon map customization and map saving and loading.",
       "conference": "International Conference on Advances in Semantic Processing",
       "location": "Rome, Italy",
       "date": "August 2014"

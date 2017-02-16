@@ -1,0 +1,120 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: rgba(0,0,0,0.87);
+}
+
+svg {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+.justified {
+  text-align: justify;
+}
+
+.header {
+  display: flex;
+  padding-top: 20px;
+}
+.header .bio {
+  width: 50%;
+  margin: auto;
+  padding: 12px 12px 35px 12px;
+  text-align: justify;
+}
+
+.node {
+  font-size: 13px;
+}
+.node .label:hover {
+  fill: rgba(0,0,0,0.7);
+}
+.node rect.background {
+  fill: #f0f0f0;
+}
+.node rect.foreground, .node circle.foreground {
+  fill: #606060;
+}
+
+.grid line {
+  stroke: rgba(0,0,0,0.22);
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}
+
+/* Info
+*/
+.info {
+  width: 100%;
+  background: #fafafa;
+  padding-top: 20px; 
+}
+.inner_info {
+  width: 50%;
+  margin: auto;
+}
+.info .item {
+  position: relative;
+  margin-bottom: 25px;
+}
+.info .item .title {
+  margin-bottom: 5px;
+}
+.info .item .description {
+  font-size: 13px;
+}
+.info .item .description .subtitle {
+  margin-bottom: 5px;
+  color: rgba(0,0,0,0.65);
+}
+.info .item .description .imgs {
+  text-align: center;
+}
+.info .item .description .imgs img {
+  max-width: 310px;
+  margin: 5px;
+}
+.info .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: -15px;
+}
+
+/* Legend
+*/
+.legend {
+  font-size: 12px;
+  fill: rgba(0,0,0,0.54);
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+/* types
+*/
+.Education {
+  background: #fb8072;
+  fill: #fb8072;
+}
+.Experience {
+  background: #80b1d3;
+  fill: #80b1d3;
+}
+.Project {
+  background: #fdb462; 
+  fill: #fdb462; 
+}
+.Publication {
+  background: #b3de69;
+  fill: #b3de69;
+}
