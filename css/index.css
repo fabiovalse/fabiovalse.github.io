@@ -66,13 +66,15 @@ svg {
   margin-bottom: 25px;
 }
 .info .item .title {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .info .item .description {
   font-size: 13px;
 }
-.info .item .description .subtitle {
+.info .item .description > * {
   margin-bottom: 5px;
+}
+.info .item .description .subtitle {
   color: rgba(0,0,0,0.65);
 }
 .info .item .description .imgs {
@@ -80,7 +82,18 @@ svg {
 }
 .info .item .description .imgs img {
   max-width: 310px;
-  margin: 5px;
+  border: 1px solid #DDD;
+  margin: 5px 3px 0px 5px;
+}
+.info .item .technologies {
+  color: rgba(0,0,0,0.65);
+}
+.info .item .links a {
+  color: rgba(0,0,0,0.87);
+  margin-right: 3px;
+}
+.info .item .links a:hover {
+  text-decoration: none;
 }
 .info .circle {
   width: 10px;

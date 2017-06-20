@@ -28,7 +28,7 @@ draw = (data, sorting) ->
   ### Nodes
   ###
   nodes = vis.selectAll '.node'
-    .data data, (d,i) -> "#{d.name}_#{i}"
+    .data data, (d,i) -> "#{d.label}_#{i}"
 
   en_nodes = nodes.enter().append 'g'
     .attrs
@@ -46,7 +46,7 @@ draw = (data, sorting) ->
         class: 'label'
         x: -20
         'text-anchor': 'end'
-      .html (d) -> if d.name.length > 20 then "#{d.name.slice(0,20)}..." else "#{d.name}"
+      .html (d) -> if d.short_label.length > 20 then "#{d.short_label.slice(0,20)}..." else "#{d.short_label}"
   
   en_nodes.append 'circle'
     .attrs
@@ -177,16 +177,28 @@ d3.json 'data.json', (error, data) ->
   en_items.append 'div'
     .attrs
       class: 'title justified'
-    .text (d) -> d.name
+    .text (d) -> d.label
 
   en_items.append 'div'
     .attrs
       class: 'description'
     .html (d) -> 
       str = switch d.type
-        when 'Publication' then "<div class='subtitle'>@#{d.conference}, #{d.location}, #{d.date}</div><div class='justified'>#{d.abstract}</div>"
-        when 'Education' then "<div class='subtitle'>@#{d.location} in #{d.title}</div><div class='justified'>#{d.description}</div>"
-        when 'Experience' then "<div class='subtitle'>@#{d.location} in #{d.place}</div>"
+        when 'Publication' then """<div class='subtitle'>@ #{d.conference}, #{d.location}, #{d.date}</div>
+                                   <div class='justified'>#{d.abstract}</div>
+                                   <div class='links'>
+                                     #{if d.presentation != undefined then '<a href="data/' + d.presentation + '">Slides</a>' else ''}
+                                     #{if d.paper != undefined then '<a href="data/' + d.paper + '">Paper</a>' else ''}
+                                   </div>
+                                """
+        when 'Education'   then """<div class='subtitle'>@ #{d.location}</div>
+                                   <div class='justified'>#{d.description}</div>
+                                """
+        when 'Experience'  then """<div class='subtitle'>@ #{d.location}, #{d.place}</div>
+                                """
+        when 'Project'     then """<div class='justified'>#{d.description}</div>
+                                   <div class='technologies'>> #{d.technologies.join(' - ')}</div>
+                                """
         else ''
 
       if d.imgs?

@@ -41,7 +41,7 @@
     /* Nodes
      */
     nodes = vis.selectAll('.node').data(data, function(d, i) {
-      return d.name + "_" + i;
+      return d.label + "_" + i;
     });
     en_nodes = nodes.enter().append('g').attrs({
       "class": function(d) {
@@ -62,10 +62,10 @@
       x: -20,
       'text-anchor': 'end'
     }).html(function(d) {
-      if (d.name.length > 20) {
-        return (d.name.slice(0, 20)) + "...";
+      if (d.short_label.length > 20) {
+        return (d.short_label.slice(0, 20)) + "...";
       } else {
-        return "" + d.name;
+        return "" + d.short_label;
       }
     });
     en_nodes.append('circle').attrs({
@@ -129,27 +129,6 @@
         return "(" + (d.date.split(' ')[0].slice(0, 3)) + " " + (d.date.split(' ')[1]) + ")";
       }
     });
-
-    /* Info
-     */
-
-    /*nodes_div.append 'div'
-      .styles
-        opacity: 0
-        display: 'none'
-      .attrs
-        class: 'info'
-      #.classed 'hidden', true
-      .html (d) -> 
-        switch d.type
-          when 'Education' then "#{d.name} in #{d.title}<br>@#{d.location}"
-          when 'Experience' then "#{d.name}<br>@#{d.location}, #{d.place}"
-          when 'Project' then "#{d.description}"
-          when 'Publication' then "#{d.name}<br>#{d.authors.join(', ')}<br>@#{d.conference}, #{d.location}"
-          else ''
-    
-    time.range [0, d3.select('.middle').node().getBoundingClientRect().width]
-     */
   };
 
 
@@ -200,7 +179,7 @@
     en_items.append('div').attrs({
       "class": 'title justified'
     }).text(function(d) {
-      return d.name;
+      return d.label;
     });
     en_items.append('div').attrs({
       "class": 'description'
@@ -209,11 +188,13 @@
       str = (function() {
         switch (d.type) {
           case 'Publication':
-            return "<div class='subtitle'>@" + d.conference + ", " + d.location + ", " + d.date + "</div><div class='justified'>" + d.abstract + "</div>";
+            return "<div class='subtitle'>@ " + d.conference + ", " + d.location + ", " + d.date + "</div>\n<div class='justified'>" + d.abstract + "</div>\n<div class='links'>\n  " + (d.presentation !== void 0 ? '<a href="data/' + d.presentation + '">Slides</a>' : '') + "\n  " + (d.paper !== void 0 ? '<a href="data/' + d.paper + '">Paper</a>' : '') + "\n</div>";
           case 'Education':
-            return "<div class='subtitle'>@" + d.location + " in " + d.title + "</div><div class='justified'>" + d.description + "</div>";
+            return "<div class='subtitle'>@ " + d.location + "</div>\n<div class='justified'>" + d.description + "</div>";
           case 'Experience':
-            return "<div class='subtitle'>@" + d.location + " in " + d.place + "</div>";
+            return "<div class='subtitle'>@ " + d.location + ", " + d.place + "</div>";
+          case 'Project':
+            return "<div class='justified'>" + d.description + "</div>\n<div class='technologies'>> " + (d.technologies.join(' - ')) + "</div>";
           default:
             return '';
         }
