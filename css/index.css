@@ -84,7 +84,7 @@ svg {
 .info {
   width: 100%;
   background: #fafafa;
-  padding-top: 20px; 
+  padding: 20px 0px 20px 0px; 
 }
 .inner_info {
   width: 50%;

@@ -154,7 +154,7 @@
     }
     d3.select('.header .bio').text(data.bio);
     svg.styles({
-      height: '380px'
+      height: '400px'
     });
     max = d3.max(data.nodes.map(function(d) {
       return d3.max(d.timerange != null ? [new Date(d.timerange.start), d.timerange.end === 'Present' ? new Date() : new Date(d.timerange.end)] : new Date(d.date));

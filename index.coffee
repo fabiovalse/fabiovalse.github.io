@@ -111,7 +111,7 @@ d3.json 'data.json', (error, data) ->
   # svg height
   svg
     .styles
-      height: '380px'
+      height: '400px'
 
   # time scale
   max = d3.max(
