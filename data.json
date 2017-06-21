@@ -41,6 +41,7 @@
       "short_label": "Research fellow",
       "location": "National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
       "place": "Pisa",
+      "description": "The activities I have carried out in the last years at the CNR were primarily focused on the design and development of web applications. I partecipated in different projects were data always had a key role. For this reason I developed skills in the management, analysis and visualization of data using different kind of web technologies.",
       "timerange": {
         "start": "August 2013",
         "end": "Present"
@@ -61,7 +62,7 @@
       "type": "Experience",
       "label": "Freelance developer",
       "short_label": "Freelance developer",
-      "description": "Cooperativa Atipica",
+      "description": "I developed a web application for managing the administration activities of a social cooperative (Atipica Cooperativa Sociale onlus).",
       "timerange": {
         "start": "May 2007",
         "end": "March 2008"
@@ -102,7 +103,7 @@
       "technologies": ["D2RQ", "SPARQL", "D3.js"],
       "timerange": {
         "start": "November 2015",
-        "end": "Present"
+        "end": "February 2017"
       },
       "links": [
         "http://www.dogi.cnr.it",
@@ -114,8 +115,8 @@
       "label": "Clavius on the web",
       "short_label": "Clavius on the web",
       "category": "Research project",
-      "description": "...",
-      "technologies": ["Vue.js", "Coffeescript", "D3.js", "OpenSeadragon"],
+      "description": "This digital humanities project aimed to preserve and study the correspondence of Christophorus Clavius, a set of letters written to him by some well-known personalities of its time such as Galileo Galilei. Among the activities of the project, I partecipated in the design and development of a tool for annotating manuscripts based on a lightweight domain specific language.",
+      "technologies": ["Vue.js", "Coffeescript", "D3.js", "PEG.js", "CodeMirror", "OpenSeadragon"],
       "timerange": {
         "start": "September 2015",
         "end": "Present"
