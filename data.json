@@ -53,6 +53,7 @@
       "short_label": "Intern",
       "location": "Complex Systems and Artificial Intelligence (CSAI) Research Center",
       "place": "Milano",
+      "description": "I performed this internship at the end of my Bachelor Degree. I worked at the CSAI center and I partecipated to their activities focused on pedestrian dynamics, the topic of the thesis developed during the intership.",
       "timerange": {
         "start": "March 2011",
         "end": "June 2011"
@@ -79,6 +80,19 @@
         "start": "June 2006",
         "end": "July 2006"
       }
+    },
+    {
+      "type": "Project",
+      "label": "Visolario",
+      "short_label": "Visolario",
+      "category": "Research project",
+      "description": "",
+      "technologies": ["Coffeescript", "D3.js", "Power graph analysis"],
+      "timerange": {
+        "start": "January 2017",
+        "end": "Present"
+      },
+      "links": []
     },
     {
       "type": "Project",
@@ -141,8 +155,8 @@
       "label": "ASIA",
       "short_label": "ASIA",
       "category": "Research project",
-      "description": "...",
-      "technologies": ["PHP", "D3.js"],
+      "description": "This project conducted with the collaboration of ANCI Toscana, aimed to retrieve information from the Web and enrich people profiles in order to find clues about their possible tax-evasion activities.",
+      "technologies": ["PHP", "D3.js", "Google Custom Search API"],
       "timerange": {
         "start": "August 2013",
         "end": "February 2015"
