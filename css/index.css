@@ -1,16 +1,27 @@
+:root {
+  --main-text-color: rgba(0,0,0,0.87);
+  --secondary-text-color: rgba(0,0,0,0.65);  
+  --education-color: #fb8072;
+  --experience-color: #80b1d3;
+  --project-color: #fdb462;
+  --publication-color: #b3de69;
+  --small-font-size: 13px;
+}
+
 body, html {
   padding: 0;
   margin: 0;
   height: 100%;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
-  color: rgba(0,0,0,0.87);
+  color: var(--main-text-color);
 }
-
 svg {
   width: 100%;
 }
 
+/* Generic classes
+*/
 .hidden {
   display: none;
 }
@@ -18,19 +29,37 @@ svg {
   text-align: justify;
 }
 
+/* Specific classes
+*/
 .header {
-  display: flex;
   padding-top: 20px;
 }
-.header .bio {
+.header .bio, .header .legend {
   width: 50%;
   margin: auto;
   padding: 12px 12px 35px 12px;
+}
+.header .bio {
   text-align: justify;
+}
+.header .legend {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--small-font-size);
+}
+.header .legend .entry {
+  display: flex;
+  margin-left: 10px;
+}
+.header .legend .entry .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 3px;
 }
 
 .node {
-  font-size: 13px;
+  font-size: var(--small-font-size);
 }
 .node .label:hover {
   fill: rgba(0,0,0,0.7);
@@ -61,41 +90,7 @@ svg {
   width: 50%;
   margin: auto;
 }
-.info .item {
-  position: relative;
-  margin-bottom: 25px;
-}
-.info .item .title {
-  margin-bottom: 10px;
-}
-.info .item .description {
-  font-size: 13px;
-}
-.info .item .description > * {
-  margin-bottom: 5px;
-}
-.info .item .description .subtitle {
-  color: rgba(0,0,0,0.65);
-}
-.info .item .description .imgs {
-  text-align: center;
-}
-.info .item .description .imgs img {
-  max-width: 310px;
-  border: 1px solid #DDD;
-  margin: 5px 3px 0px 5px;
-}
-.info .item .technologies {
-  color: rgba(0,0,0,0.65);
-}
-.info .item .links a {
-  color: rgba(0,0,0,0.87);
-  margin-right: 3px;
-}
-.info .item .links a:hover {
-  text-decoration: none;
-}
-.info .circle {
+.info .item .circle {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -103,31 +98,50 @@ svg {
   top: 5px;
   left: -15px;
 }
-
-/* Legend
-*/
-.legend {
-  font-size: 12px;
-  fill: rgba(0,0,0,0.54);
-  margin-top: 20px;
-  margin-left: 25%;
+.info .item {
+  position: relative;
+  margin-bottom: 30px;
+}
+.info .item .subtitle {
+  color: var(--secondary-text-color);
+  font-size: var(--small-font-size);
+}
+.info .item .description {
+  font-size: var(--small-font-size);
+  margin: 8px 0px 8px 0px;
+}
+.info .item .imgs {
+  text-align: center;
+}
+.info .item .imgs img {
+  max-width: 310px;
+  border: 1px solid #DDD;
+  margin: 3px;
+}
+.info .item .links a {
+  color: var(--main-text-color);
+  font-size: var(--small-font-size);
+  margin-right: 3px;
+}
+.info .item .links a:hover {
+  text-decoration: none;
 }
 
 /* types
 */
 .Education {
-  background: #fb8072;
-  fill: #fb8072;
+  background: var(--education-color);
+  fill: var(--education-color);
 }
 .Experience {
-  background: #80b1d3;
-  fill: #80b1d3;
+  background: var(--experience-color);
+  fill: var(--experience-color);
 }
 .Project {
-  background: #fdb462; 
-  fill: #fdb462; 
+  background: var(--project-color);
+  fill: var(--project-color);
 }
 .Publication {
-  background: #b3de69;
-  fill: #b3de69;
+  background: var(--publication-color);
+  fill: var(--publication-color);
 }

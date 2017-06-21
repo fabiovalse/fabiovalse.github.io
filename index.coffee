@@ -2,9 +2,13 @@ width = d3.select('body').node().getBoundingClientRect().width
 height = d3.select('body').node().getBoundingClientRect().height
 
 svg = d3.select 'svg'
-
-sorting = svg.append 'g'
 vis = svg.append 'g'
+
+# https://coffeescript-cookbook.github.io/chapters/arrays/removing-duplicate-elements-from-arrays
+Array::unique = ->
+  output = {}
+  output[@[key]] = @[key] for key in [0...@length]
+  value for key, value of output
 
 time = d3.scaleTime()
 axis_top = null
@@ -105,11 +109,9 @@ d3.json 'data.json', (error, data) ->
     .text data.bio
 
   # svg height
-  header_h = d3.select('.header').node().getBoundingClientRect().height
-
   svg
     .styles
-      height: height - header_h
+      height: '380px'
 
   # time scale
   max = d3.max(
@@ -157,6 +159,21 @@ d3.json 'data.json', (error, data) ->
   # SVG Visualization
   draw data.nodes
 
+  # Legend
+  entries = d3.select('.legend').selectAll '.entry'
+    .data data.nodes.map((d) -> d.type).unique()
+
+  en_entries = entries.enter().append 'div'
+    .attrs
+      class: 'entry'
+
+  en_entries.append 'div'
+    .attrs
+      class: (d) -> "circle #{d}"
+
+  en_entries.append 'div'
+    .text (d) -> d
+
   # HTML Information 
   info = d3.select '.inner_info'
 
@@ -181,32 +198,40 @@ d3.json 'data.json', (error, data) ->
 
   en_items.append 'div'
     .attrs
+      class: 'subtitle'
+    .html (d) -> 
+      switch d.type
+        when 'Publication' then "@ #{d.conference}, #{d.location}, #{d.date}"
+        when 'Education'   then "@ #{d.location}"
+        when 'Experience'
+          if d.location? then "@ #{d.location}, #{d.place}" else ""
+        when 'Project'     then "> #{d.technologies.join(' - ')}"
+
+  en_items.append 'div'
+    .attrs
       class: 'description'
     .html (d) -> 
-      str = switch d.type
-        when 'Publication' then """<div class='subtitle'>@ #{d.conference}, #{d.location}, #{d.date}</div>
-                                   <div class='justified'>#{d.abstract}</div>
-                                   <div class='links'>
-                                     #{if d.presentation != undefined then '<a href="data/' + d.presentation + '">Slides</a>' else ''}
-                                     #{if d.paper != undefined then '<a href="data/' + d.paper + '">Paper</a>' else ''}
-                                   </div>
-                                """
-        when 'Education'   then """<div class='subtitle'>@ #{d.location}</div>
-                                   <div class='justified'>#{d.description}</div>
-                                """
-        when 'Experience'  then """<div class='subtitle'>@ #{d.location}, #{d.place}</div>
-                                """
-        when 'Project'     then """<div class='justified'>#{d.description}</div>
-                                   <div class='technologies'>> #{d.technologies.join(' - ')}</div>
-                                """
+      switch d.type
+        when 'Publication' then "#{d.abstract}"
+        when 'Education'   then "#{d.description}"
+        when 'Experience'  then "#{d.description}"
+        when 'Project'     then "#{d.description}"
         else ''
 
-      if d.imgs?
-        str += "<div class='imgs'>"
-        for img in d.imgs
-          str += "<img src='img/#{img}'>"
-        str += "</div>"
+  en_items.append 'div'
+    .attrs
+      class: 'imgs'
+    .html (d) -> 
+      if d.imgs
+        return d.imgs.map((img) -> "<img src='img/#{img}'>").join('')
+      else
+        return ""
 
-      return str
+  en_items.append 'div'
+    .attrs
+      class: 'links'
+    .html (d) -> """
+      #{if d.presentation != undefined then '<a href="data/' + d.presentation + '">Slides</a>' else ''}
+      #{if d.paper != undefined then '<a href="data/' + d.paper + '">Paper</a>' else ''}"""
 
   items.exit().remove()
