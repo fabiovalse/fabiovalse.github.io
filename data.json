@@ -86,7 +86,7 @@
       "label": "Visolario",
       "short_label": "Visolario",
       "category": "Research project",
-      "description": "",
+      "description": "It is a research study aimed to first examine the BGP (Border Gateway Protocol) Internet traffic data collected by the Isolario project and then design and develop interactive visualizations for exploring, consulting and get insights about data.",
       "technologies": ["Coffeescript", "D3.js", "Power graph analysis"],
       "timerange": {
         "start": "January 2017",
@@ -99,7 +99,7 @@
       "label": "Totus Mundus",
       "short_label": "Totus Mundus",
       "category": "Research project",
-      "description": "This project aims to provide a web platform for exploring and consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world) of Matteo Ricci, the earliest known Chinese world map with the style of European maps.",
+      "description": "This project aims to provide a web platform for exploring and consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world), made by the gesuit Matteo Ricci, all the data and information related to it. This map has a significant historical value since it is the earliest known Chinese world map with the style of European maps.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "OpenSeadragon"],
       "timerange": {
         "start": "November 2016",
@@ -113,7 +113,7 @@
       "label": "Linked Data DoGi",
       "short_label": "Linked Data DoGi",
       "category": "Inter-departmental project",
-      "description": "DoGi is a database containing bibliographic references of articles published on italian juridical journals. The DoGi project consists in the translation of this relational database with Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
+      "description": "DoGi is a service providing bibliographic references of articles published on italian juridical journals. The Linked Data DoGi project aims to translate the original relational data of the project into Linked data using Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
       "technologies": ["D2RQ", "SPARQL", "D3.js"],
       "timerange": {
         "start": "November 2015",
@@ -129,7 +129,7 @@
       "label": "Clavius on the web",
       "short_label": "Clavius on the web",
       "category": "Research project",
-      "description": "This digital humanities project aimed to preserve and study the correspondence of Christophorus Clavius, a set of letters written to him by some well-known personalities of its time such as Galileo Galilei. Among the activities of the project, I partecipated in the design and development of a tool for annotating manuscripts based on a lightweight domain specific language.",
+      "description": "It is a digital humanities project aimed to preserve and study the correspondence of Christophorus Clavius, a set of letters written to him by some important personalities of the time such as Galileo Galilei. Beyond a web platform for presenting the digital resources and the data created in the project, a tool for annotating manuscripts based on a lightweight language has been devised.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "PEG.js", "CodeMirror", "OpenSeadragon"],
       "timerange": {
         "start": "September 2015",
@@ -155,7 +155,7 @@
       "label": "ASIA",
       "short_label": "ASIA",
       "category": "Research project",
-      "description": "This project conducted with the collaboration of ANCI Toscana, aimed to retrieve information from the Web and enrich people profiles in order to find clues about their possible tax-evasion activities.",
+      "description": "It is a regional project, financed by ANCI Toscana, that aimed to retrieve information from the web for enriching people profiles in order to find clues about their possible tax-evasion activities.",
       "technologies": ["PHP", "D3.js", "Google Custom Search API"],
       "timerange": {
         "start": "August 2013",
