@@ -134,6 +134,12 @@ svg {
   margin: auto;
   padding: 25px 0px 25px 0px; 
 }
+.inner_other a {
+  color: var(--main-text-color);
+}
+.inner_other a:hover {
+  text-decoration: none;
+}
 .center_aligned {
   display: flex;
   align-items: center;
