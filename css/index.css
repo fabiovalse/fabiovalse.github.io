@@ -127,6 +127,38 @@ svg {
   text-decoration: none;
 }
 
+/* other
+*/
+.inner_other {
+  width: 50%;
+  margin: auto;
+  padding: 25px 0px 25px 0px; 
+}
+.center_aligned {
+  display: flex;
+  align-items: center;
+}
+.center_aligned a {
+  padding: 0px 2px 0px 2px;
+}
+
+/* footer
+*/
+.footer {
+  background: #303030;
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 12px;
+  padding: 25px 0px 25px 0px;
+}
+.footer a {
+  color: #F2F2F2;
+  text-decoration: underline;
+}
+.footer a:hover {
+  text-decoration: none;
+}
+
 /* types
 */
 .Education {
