@@ -86,7 +86,7 @@
       "label": "Visolario",
       "short_label": "Visolario",
       "category": "Research project",
-      "description": "It is a research study aimed to first examine the BGP (Border Gateway Protocol) Internet traffic data collected by the Isolario project and then design and develop interactive visualizations for exploring, consulting and get insights about data.",
+      "description": "It is a research study aimed to first examine the Border Gateway Protocol (BGP) Internet traffic data collected by the Isolario project and then design and develop interactive visualizations for exploring, consulting and getting insights about data.",
       "technologies": ["Coffeescript", "D3.js", "Power graph analysis"],
       "timerange": {
         "start": "January 2017",
@@ -99,7 +99,7 @@
       "label": "Totus Mundus",
       "short_label": "Totus Mundus",
       "category": "Research project",
-      "description": "This project aims to provide a web platform for exploring and consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world), made by the gesuit Matteo Ricci, all the data and information related to it. This map has a significant historical value since it is the earliest known Chinese world map with the style of European maps.",
+      "description": "This project aims to provide a web platform for consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world), the data and information related to it. This map, created by the Jesuit Matteo Ricci, has a significant historical value since it is the earliest known Chinese world map in the style of European maps.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "OpenSeadragon"],
       "timerange": {
         "start": "November 2016",
@@ -113,7 +113,7 @@
       "label": "Linked Data DoGi",
       "short_label": "Linked Data DoGi",
       "category": "Inter-departmental project",
-      "description": "DoGi is a service providing bibliographic references of articles published on italian juridical journals. The Linked Data DoGi project aims to translate the original relational data of the project into Linked data using Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
+      "description": "DoGi is a service providing bibliographic references of articles published on Italian juridical journals. The Linked Data DoGi project aims to translate the original relational data of DoGi into Linked data using Semantic Web Technologies. Moreover, Information Visualization techniques have been used in order to present the dataset.",
       "technologies": ["D2RQ", "SPARQL", "D3.js"],
       "timerange": {
         "start": "November 2015",
@@ -129,7 +129,7 @@
       "label": "Clavius on the web",
       "short_label": "Clavius on the web",
       "category": "Research project",
-      "description": "It is a digital humanities project aimed to preserve and study the correspondence of Christophorus Clavius, a set of letters written to him by some important personalities of the time such as Galileo Galilei. Beyond a web platform for presenting the digital resources and the data created in the project, a tool for annotating manuscripts based on a lightweight language has been devised.",
+      "description": "It is a Digital Humanities project aimed to preserve and study the correspondence of Christophorus Clavius, an important mathematician and astronomer who was in contact with some important personalities of his time such as Galileo Galilei. Beside a web platform for presenting the digital resources and the data created in the project, a tool for annotating manuscripts, based on a lightweight language, has been devised.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "PEG.js", "CodeMirror", "OpenSeadragon"],
       "timerange": {
         "start": "September 2015",
@@ -142,7 +142,7 @@
       "label": "Campusmap",
       "short_label": "Campusmap",
       "category": "National project",
-      "description": "This project has the aim of providing an interactive map for the exploration of the Research Campus of the CNR of Pisa in order to enable users to get general information about the area, find places and get directions to reach them.",
+      "description": "This project has the purpose of providing an interactive map for exploring and navigating the Research Campus of the CNR in Pisa, enabling users to get general information about the area, find places and get directions to reach them.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "Three.js"],
       "timerange": {
         "start": "March 2015",
@@ -155,7 +155,7 @@
       "label": "ASIA",
       "short_label": "ASIA",
       "category": "Research project",
-      "description": "It is a regional project, financed by ANCI Toscana, that aimed to retrieve information from the web for enriching people profiles in order to find clues about their possible tax-evasion activities.",
+      "description": "It is a regional project, financed by ANCI Toscana, that aimed to find clues about possible tax-evasion by retrieving and combining information from the web.",
       "technologies": ["PHP", "D3.js", "Google Custom Search API"],
       "timerange": {
         "start": "August 2013",
