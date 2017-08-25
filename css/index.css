@@ -6,13 +6,15 @@
   --project-color: #fdb462;
   --publication-color: #b3de69;
   --small-font-size: 13px;
+  --main-font-family: 'Lato', sans-serif;
+  --secondary-font-family: 'Open Sans', sans-serif;
 }
 
 body, html {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: var(--main-font-family);
   font-size: 15px;
   color: var(--main-text-color);
 }
@@ -31,12 +33,18 @@ svg {
 
 /* Specific classes
 */
-.header {
-  padding-top: 20px;
-}
-.header .bio, .header .legend {
+.header .title, .header .bio, .header .legend {
   width: 50%;
   margin: auto;
+}
+.header .title {
+  font-family: var(--secondary-font-family);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-top: 12px;
+}
+.header .bio, .header .legend {
   padding: 12px 12px 35px 12px;
 }
 .header .bio {
@@ -102,7 +110,13 @@ svg {
   position: relative;
   margin-bottom: 30px;
 }
+.info .item .title {
+  font-family: var(--secondary-font-family);
+  font-weight: bold;
+}
 .info .item .subtitle {
+  font-family: var(--secondary-font-family);
+  font-weight: bold;
   color: var(--secondary-text-color);
   font-size: var(--small-font-size);
 }
