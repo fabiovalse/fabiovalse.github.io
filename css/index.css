@@ -144,22 +144,21 @@ svg {
 /* other
 */
 .inner_other {
+  position: relative;
   width: 50%;
   margin: auto;
   padding: 25px 0px 25px 0px; 
+}
+.inner_other img {
+  position: absolute;
+  top: 25;
+  left: -30px;
 }
 .inner_other a {
   color: var(--main-text-color);
 }
 .inner_other a:hover {
   text-decoration: none;
-}
-.center_aligned {
-  display: flex;
-  align-items: center;
-}
-.center_aligned a {
-  padding: 0px 2px 0px 2px;
 }
 
 /* footer
