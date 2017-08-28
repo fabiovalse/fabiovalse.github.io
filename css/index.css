@@ -6,7 +6,7 @@
   --project-color: #fdb462;
   --publication-color: #b3de69;
   --small-font-size: 13px;
-  --main-font-family: 'Lato', sans-serif;
+  --main-font-family: 'Roboto', sans-serif;
   --secondary-font-family: 'Open Sans', sans-serif;
 }
 
@@ -39,16 +39,17 @@ svg {
 }
 .header .title {
   font-family: var(--secondary-font-family);
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding-top: 12px;
 }
 .header .bio, .header .legend {
-  padding: 12px 12px 35px 12px;
+  padding: 12px 12px 24px 12px;
 }
 .header .bio {
   text-align: justify;
+  line-height: 20px;
 }
 .header .legend {
   display: flex;
@@ -121,8 +122,9 @@ svg {
   font-size: var(--small-font-size);
 }
 .info .item .description {
-  font-size: var(--small-font-size);
+  font-size: 13.5px;
   margin: 8px 0px 8px 0px;
+  line-height: 18px;
 }
 .info .item .imgs {
   text-align: center;
