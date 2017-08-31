@@ -255,7 +255,7 @@
     en_items.append('div').attrs({
       "class": 'links'
     }).html(function(d) {
-      return (d.presentation !== void 0 ? '<a href="data/' + d.presentation + '">Slides</a>' : '') + "\n" + (d.paper !== void 0 ? '<a href="data/' + d.paper + '">Paper</a>' : '');
+      return (d.presentation !== void 0 ? '<a href="data/' + d.presentation + '">Slides</a>' : '') + "\n" + (d.paper !== void 0 ? '<a href="data/' + d.paper + '">Paper</a>' : '') + "\n" + (d.thesis !== void 0 ? '<a href="data/' + d.thesis + '">Thesis</a>' : '');
     });
     return items.exit().remove();
   });

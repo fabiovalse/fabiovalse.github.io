@@ -232,6 +232,7 @@ d3.json 'data.json', (error, data) ->
       class: 'links'
     .html (d) -> """
       #{if d.presentation != undefined then '<a href="data/' + d.presentation + '">Slides</a>' else ''}
-      #{if d.paper != undefined then '<a href="data/' + d.paper + '">Paper</a>' else ''}"""
+      #{if d.paper != undefined then '<a href="data/' + d.paper + '">Paper</a>' else ''}
+      #{if d.thesis != undefined then '<a href="data/' + d.thesis + '">Thesis</a>' else ''}"""
 
   items.exit().remove()
