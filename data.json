@@ -1,12 +1,12 @@
 {
-  "bio": "I'm a research fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) in Pisa. In particular, I work in a group called Web Applications for the Future Internet (WAFI). I received my Ph.D. in Information Engineering at the University of Pisa by presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies while my research activities currently cover Information Visualization and Semantic Web.",
+  "bio": "I'm a Research Fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) in Pisa. In particular, I work in a group called Web Applications for the Future Internet (WAFI). I received my Ph.D. in Information Engineering from the University of Pisa presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies, while my research activities currently cover Information Visualization and Semantic Web.",
   "nodes": [
     {
       "type": "Education",
       "label": "Ph.D. in Information Engineering",
       "short_label": "Ph.D.",
       "location": "University of Pisa",
-      "description": "My thesis, Interactive Visualization of Semantic Web Data, presents a method based on cartographic principles for visually representing and exploring Linked Data sets as they were traditional geographic maps.",
+      "description": "My thesis, titled \"Interactive Visualization of Semantic Web Data\", presents a method based on cartographic principles for visually representing and exploring Linked Data sets as they were traditional geographic maps.",
       "timerange": {
         "start": "October 2013",
         "end": "January 2017"
@@ -37,11 +37,11 @@
     },
     {
       "type": "Experience",
-      "label": "Research fellow",
-      "short_label": "Research fellow",
+      "label": "Research Fellow",
+      "short_label": "Research Fellow",
       "location": "National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
       "place": "Pisa",
-      "description": "The activities I have carried out in the last years at the CNR were primarily focused on the design and development of web applications. I partecipated in different projects were data always had a key role. For this reason I developed skills in the management, analysis and visualization of data using different kind of web technologies.",
+      "description": "The activities I have carried out in the last years at the CNR were primarily focused on the design and development of Web applications. I partecipated in different projects in which data always had a key role. For this reason I developed skills in the management, analysis and visualization of data using different kinds of Web technologies.",
       "timerange": {
         "start": "August 2013",
         "end": "Present"
@@ -53,7 +53,7 @@
       "short_label": "Intern",
       "location": "Complex Systems and Artificial Intelligence (CSAI) Research Center",
       "place": "Milano",
-      "description": "I performed this internship at the end of my Bachelor Degree. I worked at the CSAI center and I partecipated to their activities focused on pedestrian dynamics, the topic of the thesis developed during the intership.",
+      "description": "I did this internship during the third year of my Bachelor. I worked at the CSAI center and I partecipated to their activities focused on pedestrian dynamics, the topic of my thesis developed during the intership.",
       "timerange": {
         "start": "March 2011",
         "end": "June 2011"
@@ -63,7 +63,7 @@
       "type": "Experience",
       "label": "Freelance developer",
       "short_label": "Freelance developer",
-      "description": "I developed a web application for managing the administration activities of a social cooperative (Atipica Cooperativa Sociale onlus).",
+      "description": "I developed a Web application for managing the administration activities of a social cooperative (Atipica Cooperativa Sociale onlus).",
       "timerange": {
         "start": "May 2007",
         "end": "March 2008"
@@ -74,7 +74,7 @@
       "label": "Intern",
       "short_label": "Intern",
       "location": "Redix Information SRL",
-      "description": "I partecipated in the development of a project management software for the Milan Chamber of Commerce.",
+      "description": "I contributed to the development of a project management software for the Milan Chamber of Commerce.",
       "place": "Lissone (MI)",
       "timerange": {
         "start": "June 2006",
@@ -99,7 +99,7 @@
       "label": "Totus Mundus",
       "short_label": "Totus Mundus",
       "category": "Research project",
-      "description": "This project aims to provide a web platform for consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world), the data and information related to it. This map, created by the Jesuit Matteo Ricci, has a significant historical value since it is the earliest known Chinese world map in the style of European maps.",
+      "description": "This project aims to provide a Web platform for consulting the Kūnyú Wànguó Quántú (坤輿萬國全圖, Complete map of all countries of the world), the data and information related to it. This map, created by the Jesuit Matteo Ricci, has a significant historical value since it is the earliest known Chinese world map in the style of European maps.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "OpenSeadragon"],
       "timerange": {
         "start": "November 2016",
@@ -126,10 +126,10 @@
     },
     {
       "type": "Project",
-      "label": "Clavius on the web",
-      "short_label": "Clavius on the web",
+      "label": "Clavius on the Web",
+      "short_label": "Clavius on the Web",
       "category": "Research project",
-      "description": "It is a Digital Humanities project aimed to preserve and study the correspondence of Christophorus Clavius, an important mathematician and astronomer who was in contact with some important personalities of his time such as Galileo Galilei. Beside a web platform for presenting the digital resources and the data created in the project, a tool for annotating manuscripts, based on a lightweight language, has been devised.",
+      "description": "It is a Digital Humanities project aimed to preserve and study the correspondence of Christophorus Clavius, an important mathematician and astronomer who was in contact with some important personalities of his time such as Galileo Galilei. Beside a Web platform for presenting the digital resources and the data created in the project, a tool for annotating manuscripts, based on a lightweight language, has been devised.",
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "PEG.js", "CodeMirror", "OpenSeadragon"],
       "timerange": {
         "start": "September 2015",
@@ -155,7 +155,7 @@
       "label": "ASIA",
       "short_label": "ASIA",
       "category": "Research project",
-      "description": "It is a regional project, financed by ANCI Toscana, that aimed to find clues about possible tax-evasion by retrieving and combining information from the web.",
+      "description": "It is a regional project, financed by ANCI Toscana, that aimed to find clues about possible tax-evasion by retrieving and combining information from the Web.",
       "technologies": ["PHP", "D3.js", "Google Custom Search API"],
       "timerange": {
         "start": "August 2013",
