@@ -79,6 +79,9 @@ svg {
 .node rect.foreground, .node circle.foreground {
   fill: #606060;
 }
+.node rect.foreground:hover {
+  fill: #808080;
+}
 
 .grid line {
   stroke: rgba(0,0,0,0.22);
