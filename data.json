@@ -1,5 +1,5 @@
 {
-  "bio": "I'm a Research Fellow at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) in Pisa. In particular, I work in a group called Web Applications for the Future Internet (WAFI). I received my Ph.D. in Information Engineering from the University of Pisa presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies, while my research activities currently cover Information Visualization and Semantic Web.",
+  "bio": "I'm a software developer at VxFiber in Milan. My activities regards the design and development of Web applications based on modern Web technologies. Previously I worked at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) of Pisa. I received my Ph.D. in Information Engineering from the University of Pisa presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies.",
   "nodes": [
     {
       "type": "Education",
@@ -40,14 +40,26 @@
     },
     {
       "type": "Experience",
+      "label": "Software developer",
+      "short_label": "VxFiber",
+      "location": "VxFiber",
+      "place": "Milan",
+      "description": "Design and development of Web applications based on modern Web technologies.",
+      "timerange": {
+        "start": "January 2018",
+        "end": "Present"
+      }
+    },
+    {
+      "type": "Experience",
       "label": "Research Fellow",
-      "short_label": "Research Fellow",
+      "short_label": "CNR",
       "location": "National Research Council (CNR), Institute of Informatics and Telematics (IIT)",
       "place": "Pisa",
       "description": "The activities I have carried out in the last years at the CNR were primarily focused on the design and development of Web applications. I partecipated in different projects in which data always had a key role. For this reason I developed skills in the management, analysis and visualization of data using different kinds of Web technologies.",
       "timerange": {
         "start": "August 2013",
-        "end": "Present"
+        "end": "January 2018"
       }
     },
     {
@@ -92,8 +104,8 @@
       "description": "It is a research study aimed to first examine the Border Gateway Protocol (BGP) Internet traffic data collected by the Isolario project and then design and develop interactive visualizations for exploring, consulting and getting insights about data.",
       "technologies": ["Coffeescript", "D3.js", "Power graph analysis"],
       "timerange": {
-        "start": "January 2017",
-        "end": "Present"
+        "start": "November 2017",
+        "end": "January 2018"
       },
       "links": []
     },
@@ -106,7 +118,7 @@
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "OpenSeadragon"],
       "timerange": {
         "start": "November 2016",
-        "end": "Present"
+        "end": "January 2018"
       },
       "links": [],
       "imgs": ["totusmundus_1.png", "totusmundus_2.png"]
@@ -136,7 +148,7 @@
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "PEG.js", "CodeMirror", "OpenSeadragon"],
       "timerange": {
         "start": "September 2015",
-        "end": "Present"
+        "end": "January 2018"
       },
       "links": []
     },
@@ -149,7 +161,7 @@
       "technologies": ["Vue.js", "Coffeescript", "D3.js", "Three.js"],
       "timerange": {
         "start": "March 2015",
-        "end": "Present"
+        "end": "January 2018"
       },
       "imgs": ["smartarea.png"]
     },
