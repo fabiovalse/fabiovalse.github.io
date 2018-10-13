@@ -4,6 +4,9 @@ height = d3.select('body').node().getBoundingClientRect().height
 svg = d3.select 'svg'
 vis = svg.append 'g'
 
+margin_left = 0.2
+digram_ratio = 0.62
+
 # https://coffeescript-cookbook.github.io/chapters/arrays/removing-duplicate-elements-from-arrays
 Array::unique = ->
   output = {}
@@ -40,7 +43,7 @@ draw = (data, sorting) ->
 
   all_nodes = en_nodes.merge nodes
     .attrs
-      transform: (d,i) -> "translate(#{width*0.25}, #{(i+1)*20})"
+      transform: (d,i) -> "translate(#{width*margin_left}, #{(i+1)*20})"
 
   en_nodes.append 'a'
     .attrs
@@ -66,7 +69,7 @@ draw = (data, sorting) ->
   en_nodes.append 'rect'
     .attrs
       class: 'background'
-      width: "#{width*0.5}"
+      width: "#{width*digram_ratio}"
       height: bar_height
       y: -7
 #    .on 'click', () ->
@@ -111,7 +114,7 @@ d3.json 'data.json', (error, data) ->
   # svg height
   svg
     .styles
-      height: '400px'
+      height: '420px'
 
   # time scale
   max = d3.max(
@@ -140,13 +143,13 @@ d3.json 'data.json', (error, data) ->
 
   time
     .domain [min, max]
-    .range [0, width*0.5]
+    .range [0, width*digram_ratio]
 
   axis_top = d3.axisBottom(time)
 
   axis = vis.append 'g'
     .attrs
-      transform: "translate(#{width*0.25}, #{data.nodes.length*(bar_height+15)})"
+      transform: "translate(#{width*margin_left}, #{data.nodes.length*(bar_height+15)})"
     .call axis_top
 
   grid = axis.append 'g'

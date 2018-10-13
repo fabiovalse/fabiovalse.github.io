@@ -22,6 +22,32 @@ svg {
   width: 100%;
 }
 
+.gosper-header {
+  position: relative;
+  backface-visibility: hidden;
+  overflow: hidden;
+  min-height: 100%;
+}
+.gosper-header .gosper-header-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../img/gosper.png);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+}
+.gosper-header .maintitle {
+  position: absolute;
+  bottom: 0;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 8px 8px 15px 24.8%;
+}
+
 /* Generic classes
 */
 .hidden {
@@ -200,4 +226,16 @@ svg {
 .Publication {
   background: var(--publication-color);
   fill: var(--publication-color);
+}
+
+@media all and (min-width: 0px) and (max-width: 1000px) {
+  .header .title, .header .bio, .header .legend {
+    width: 75%;
+  }
+  .inner_info {
+    width: 75%;
+  }
+  .gosper-header .maintitle {
+    padding: 8px 8px 8px 12.5%;
+  }
 }
