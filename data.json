@@ -238,6 +238,13 @@
     },
     {
       "type": "gist",
+      "label": "DBpedia ontology evolution",
+      "link": "http://bl.ocks.org/fabiovalse/raw/0dfe7280086553c4a233",
+      "code": "http://bl.ocks.org/fabiovalse/0dfe7280086553c4a233",
+      "img": "dbpedia_ontology_evolution.png"
+    },
+    {
+      "type": "gist",
       "label": "Interactive version of Dante's Divina Commedia",
       "link": "https://fabiovalse.github.io/Divina-Commedia-Visualization/vis/",
       "code": "https://github.com/fabiovalse/Divina-Commedia-Visualization",
