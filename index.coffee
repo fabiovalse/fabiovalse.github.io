@@ -5,7 +5,7 @@ svg = d3.select 'svg'
 vis = svg.append 'g'
 
 margin_left = 0.2
-digram_ratio = 0.62
+diagram_ratio = 0.62
 
 # https://coffeescript-cookbook.github.io/chapters/arrays/removing-duplicate-elements-from-arrays
 Array::unique = ->
@@ -35,7 +35,7 @@ draw = (data, sorting) ->
   ### Nodes
   ###
   nodes = vis.selectAll '.node'
-    .data data, (d,i) -> "#{d.label}_#{i}"
+    .data data, (d,i) -> "#{width}_#{d.label}_#{i}"
 
   en_nodes = nodes.enter().append 'g'
     .attrs
@@ -69,27 +69,16 @@ draw = (data, sorting) ->
   en_nodes.append 'rect'
     .attrs
       class: 'background'
-      width: "#{width*digram_ratio}"
       height: bar_height
       y: -7
-#    .on 'click', () ->
-#      draw data, true
+  all_nodes.select '.background'
+    .attrs
+      width: "#{width*diagram_ratio}"
 
   en_nodes.append 'rect'
     .attrs
       class: 'foreground'
       height: (d) -> if d.type is 'Publication' then bar_height*2 else bar_height
-      width: (d) -> 
-        if d.type is 'Publication'
-          return 3
-        else if d.timerange?
-          return time(if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)) - time(new Date(d.timerange.start))
-      y: (d) -> if d.type is 'Publication' then -10 else -7
-      x: (d) -> 
-        if d.type is 'Publication'
-          return time(new Date(d.date))
-        else if d.timerange?
-          return time(new Date(d.timerange.start))
     .append 'title'
       .html (d) -> 
         if d.type is 'Publication'
@@ -101,6 +90,42 @@ draw = (data, sorting) ->
             "(<span>from</span> #{d.timerange.start.split(' ')[0].slice(0,3)} #{d.timerange.start.split(' ')[1]} <span>to</span> #{d.timerange.end})"
         else
           "(#{d.date.split(' ')[0].slice(0,3)} #{d.date.split(' ')[1]})"
+  all_nodes.select '.foreground'
+    .attrs
+      width: (d) -> 
+        if d.type is 'Publication'
+          return 3
+        else if d.timerange?
+          return time(if d.timerange.end is 'Present' then new Date() else new Date(d.timerange.end)) - time(new Date(d.timerange.start))
+      y: (d) -> if d.type is 'Publication' then -10 else -7
+      x: (d) -> 
+        if d.type is 'Publication'
+          return time(new Date(d.date))
+        else if d.timerange?
+          return time(new Date(d.timerange.start))
+
+### Initialize visualization
+###
+init = (data, min, max) ->
+  time
+    .domain [min, max]
+    .range [0, width*diagram_ratio]
+
+  axis_top = d3.axisBottom(time)
+
+  vis.select('.axis').remove()
+  axis = vis.append 'g'
+    .attrs
+      class: 'axis'
+      transform: "translate(#{width*margin_left}, #{data.nodes.length*(bar_height+15)})"
+    .call axis_top
+
+  grid = axis.append 'g'
+    .attrs
+      class: 'grid'
+    .call(axis_top
+      .tickSize -(data.nodes.length+1)*30
+      .tickFormat '')
 
 ### Data loading
 ###
@@ -141,26 +166,17 @@ d3.json 'data.json', (error, data) ->
   min = new Date(min).setMonth(min.getMonth() - 6)
   max = new Date(max).setMonth(max.getMonth() + 6)
 
-  time
-    .domain [min, max]
-    .range [0, width*digram_ratio]
-
-  axis_top = d3.axisBottom(time)
-
-  axis = vis.append 'g'
-    .attrs
-      transform: "translate(#{width*margin_left}, #{data.nodes.length*(bar_height+15)})"
-    .call axis_top
-
-  grid = axis.append 'g'
-    .attrs
-      class: 'grid'
-    .call(axis_top
-      .tickSize -(data.nodes.length+1)*30
-      .tickFormat '')
+  init(data, min, max)
 
   # SVG Visualization
   draw data.nodes
+
+  # On window resize, recompute the visualization
+  window.onresize = (e) ->
+    width = e.currentTarget.innerWidth
+    init(data, min, max)
+
+    draw data.nodes
 
   # Legend
   entries = d3.select('.legend').selectAll '.entry'
