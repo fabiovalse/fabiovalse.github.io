@@ -235,6 +235,9 @@ svg {
   .inner_info {
     width: 75%;
   }
+  .inner_other {
+    width: 75%;
+  }
   .gosper-header .maintitle {
     padding: 8px 8px 8px 12.5%;
   }
