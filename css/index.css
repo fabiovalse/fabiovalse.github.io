@@ -228,7 +228,7 @@ svg {
   fill: var(--publication-color);
 }
 
-@media all and (min-width: 0px) and (max-width: 1000px) {
+@media screen and (min-width: 401px) and (max-width: 1000px) {
   .header .title, .header .bio, .header .legend {
     width: 75%;
   }
@@ -240,5 +240,33 @@ svg {
   }
   .gosper-header .maintitle {
     padding: 8px 8px 8px 12.5%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header .title, .header .bio, .header .legend {
+    width: 75%;
+  }
+  .header .bio {
+    line-height: 25px;
+  }
+  .inner_info {
+    width: 75%;
+  }
+  .inner_other {
+    width: 75%;
+  }
+  body, html {
+    font-size: 20px;
+  }
+  .gosper-header .maintitle {
+    font-size: 30px;
+    padding: 8px 8px 8px 12.5%;
+  }
+  .info .item .description {
+    font-size: 16px;
+    text-align: justify;
+  }
+  .info .item .subtitle {
+    font-size: 14px;
   }
 }
