@@ -159,7 +159,7 @@ svg {
   text-align: center;
 }
 .info .item .imgs img {
-  max-width: 310px;
+  max-width: 100%;
   border: 1px solid #DDD;
   margin: 3px;
 }
