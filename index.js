@@ -219,7 +219,7 @@
       return draw(cv_data.nodes);
     };
     // Legend
-    entries = d3.select('.legend').selectAll('.entry').data(data.nodes.map(function(d) {
+    entries = d3.select('.legend').selectAll('.entry').data(cv_data.nodes.map(function(d) {
       return d.type;
     }).unique());
     en_entries = entries.enter().append('div').attrs({

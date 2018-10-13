@@ -200,7 +200,7 @@ d3.json 'data.json', (error, data) ->
 
   # Legend
   entries = d3.select('.legend').selectAll '.entry'
-    .data data.nodes.map((d) -> d.type).unique()
+    .data cv_data.nodes.map((d) -> d.type).unique()
 
   en_entries = entries.enter().append 'div'
     .attrs
