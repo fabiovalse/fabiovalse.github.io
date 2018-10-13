@@ -20,6 +20,11 @@ grid = null
 
 bar_height = 6
 
+
+###
+# MAIN visualization function 
+#
+###
 draw = (data, sorting) ->
   if sorting
     data = data.sort (a,b) -> 
@@ -35,7 +40,7 @@ draw = (data, sorting) ->
   ### Nodes
   ###
   nodes = vis.selectAll '.node'
-    .data data, (d,i) -> "#{width}_#{d.label}_#{i}"
+    .data data, (d,i) -> "#{d.label}_#{i}"
 
   en_nodes = nodes.enter().append 'g'
     .attrs
@@ -104,7 +109,10 @@ draw = (data, sorting) ->
         else if d.timerange?
           return time(new Date(d.timerange.start))
 
-### Initialize visualization
+
+###
+# Visualization initialization
+# it is called on the page load and every time the window is resized
 ###
 init = (data, min, max) ->
   time
@@ -118,7 +126,9 @@ init = (data, min, max) ->
     .attrs
       class: 'axis'
       transform: "translate(#{width*margin_left}, #{data.nodes.length*(bar_height+15)})"
-    .call axis_top
+    .call(axis_top
+      .tickFormat (d) -> if width > 600 then d.getFullYear() else d.getFullYear().toString().slice(2)
+    )
 
   grid = axis.append 'g'
     .attrs
@@ -127,7 +137,14 @@ init = (data, min, max) ->
       .tickSize -(data.nodes.length+1)*30
       .tickFormat '')
 
-### Data loading
+
+###
+# MAIN rendering function
+# - loads data
+# - computes scales
+# - initialize the visualization
+# - draw the visualization
+# - renders all the other information that are not a chart
 ###
 d3.json 'data.json', (error, data) ->
   if error

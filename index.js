@@ -39,6 +39,10 @@
 
   bar_height = 6;
 
+  /*
+   * MAIN visualization function 
+   *
+   */
   draw = function(data, sorting) {
     var all_nodes, en_nodes, nodes;
     if (sorting) {
@@ -57,7 +61,7 @@
     /* Nodes
     */
     nodes = vis.selectAll('.node').data(data, function(d, i) {
-      return `${width}_${d.label}_${i}`;
+      return `${d.label}_${i}`;
     });
     en_nodes = nodes.enter().append('g').attrs({
       class: function(d) {
@@ -150,8 +154,10 @@
     });
   };
 
-  /* Initialize visualization
-  */
+  /*
+   * Visualization initialization
+   * it is called on the page load and every time the window is resized
+   */
   init = function(data, min, max) {
     time.domain([min, max]).range([0, width * diagram_ratio]);
     axis_top = d3.axisBottom(time);
@@ -159,14 +165,26 @@
     axis = vis.append('g').attrs({
       class: 'axis',
       transform: `translate(${width * margin_left}, ${data.nodes.length * (bar_height + 15)})`
-    }).call(axis_top);
+    }).call(axis_top.tickFormat(function(d) {
+      if (width > 600) {
+        return d.getFullYear();
+      } else {
+        return d.getFullYear().toString().slice(2);
+      }
+    }));
     return grid = axis.append('g').attrs({
       class: 'grid'
     }).call(axis_top.tickSize(-(data.nodes.length + 1) * 30).tickFormat(''));
   };
 
-  /* Data loading
-  */
+  /*
+   * MAIN rendering function
+   * - loads data
+   * - computes scales
+   * - initialize the visualization
+   * - draw the visualization
+   * - renders all the other information that are not a chart
+   */
   d3.json('data.json', function(error, data) {
     var all_items, en_entries, en_items, entries, info, items, max, min;
     if (error) {

@@ -247,7 +247,7 @@ svg {
     width: 75%;
   }
   .header .bio {
-    line-height: 25px;
+    font-size: 16px;
   }
   .inner_info {
     width: 75%;
@@ -256,15 +256,11 @@ svg {
     width: 75%;
   }
   body, html {
-    font-size: 20px;
+    font-size: 16px;
   }
   .gosper-header .maintitle {
     font-size: 30px;
     padding: 8px 8px 8px 12.5%;
-  }
-  .info .item .description {
-    font-size: 16px;
-    text-align: justify;
   }
   .info .item .subtitle {
     font-size: 14px;
