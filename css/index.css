@@ -161,7 +161,6 @@ svg {
 .info .item .imgs img {
   max-width: 100%;
   border: 1px solid #DDD;
-  margin: 3px;
 }
 .info .item .links a {
   color: var(--main-text-color);
@@ -174,16 +173,13 @@ svg {
 
 /* other
 */
+.other {
+  width: 100%;
+  padding: 20px 0px 20px 0px; 
+}
 .inner_other {
-  position: relative;
   width: 50%;
   margin: auto;
-  padding: 25px 0px 25px 0px; 
-}
-.inner_other img {
-  position: absolute;
-  top: 25;
-  left: -30px;
 }
 .inner_other a {
   color: var(--main-text-color);
@@ -191,6 +187,32 @@ svg {
 .inner_other a:hover {
   text-decoration: none;
 }
+
+.gist-title {
+  margin-bottom: 20px;
+}
+.inner_other .gist {
+  position: relative;
+  margin-bottom: 30px;
+}
+.inner_other .gist .title {
+  margin-bottom: 2px;
+}
+.inner_other .gist img {
+  max-width: 100%;
+  border: 1px solid #DDD;
+}
+.inner_other .gist img:hover {
+  opacity: 0.6;
+}
+.inner_other .gist .code {
+  color: var(--main-text-color);
+  font-size: var(--small-font-size);
+}
+.inner_other .gist .code:hover {
+  text-decoration: none;
+}
+
 
 /* footer
 */

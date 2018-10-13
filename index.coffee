@@ -183,17 +183,20 @@ d3.json 'data.json', (error, data) ->
   min = new Date(min).setMonth(min.getMonth() - 6)
   max = new Date(max).setMonth(max.getMonth() + 6)
 
-  init(data, min, max)
+  cv_data = { ...data }
+  cv_data.nodes = data.nodes.filter((d) -> d.type != 'gist')
+
+  init(cv_data, min, max)
 
   # SVG Visualization
-  draw data.nodes
+  draw cv_data.nodes
 
   # On window resize, recompute the visualization
   window.onresize = (e) ->
     width = e.currentTarget.innerWidth
-    init(data, min, max)
+    init(cv_data, min, max)
 
-    draw data.nodes
+    draw cv_data.nodes
 
   # Legend
   entries = d3.select('.legend').selectAll '.entry'
@@ -210,11 +213,11 @@ d3.json 'data.json', (error, data) ->
   en_entries.append 'div'
     .text (d) -> d
 
-  # HTML Information 
+  # CV Information 
   info = d3.select '.inner_info'
 
   items = info.selectAll '.item'
-    .data data.nodes
+    .data data.nodes.filter((d) -> d.type != 'gist')
 
   en_items = items.enter().append 'div'
     .attrs
@@ -272,3 +275,33 @@ d3.json 'data.json', (error, data) ->
       #{if d.thesis != undefined then '<a href="data/' + d.thesis + '">Thesis</a>' else ''}"""
 
   items.exit().remove()
+
+  #
+  gists_node = d3.select '.inner_other'
+
+  gists = gists_node.selectAll '.gist'
+    .data data.nodes.filter((d) -> d.type == 'gist')
+
+  en_gists = gists.enter().append 'div'
+    .attrs
+      id: (d,i) -> "gist#{i}"
+      class: 'gist'
+
+  all_gists = en_gists.merge(gists)
+
+  en_gists.append 'div'
+    .attrs
+      class: 'title'
+    .text (d) -> d.label
+  
+  en_gists.append 'a'
+    .attrs
+      class: 'img'
+      href: (d) -> "#{d.link}"
+    .html (d) ->  "<img src='img/#{d.img}'>"
+
+  en_gists.append 'a'
+    .attrs
+      class: 'code'
+      href: (d) -> "#{d.code}"
+    .text () -> 'Code'

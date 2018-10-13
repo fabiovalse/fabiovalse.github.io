@@ -235,6 +235,62 @@
       "location": "Rome, Italy",
       "date": "August 2014",
       "paper": "paper_semapro2014.pdf"
+    },
+    {
+      "type": "gist",
+      "label": "Interactive version of Dante's Divina Commedia",
+      "link": "https://fabiovalse.github.io/Divina-Commedia-Visualization/vis/",
+      "code": "https://github.com/fabiovalse/Divina-Commedia-Visualization",
+      "img": "divine_comedy.png"
+    },
+    {
+      "type": "gist",
+      "label": "Gosper Islands generator (refresh to generate a new island)",
+      "link": "http://bl.ocks.org/fabiovalse/raw/7ac2e686d28c4c098232",
+      "code": "http://bl.ocks.org/fabiovalse/7ac2e686d28c4c098232",
+      "img": "gosper_island.png"
+    },
+    {
+      "type": "gist",
+      "label": "Zoomable Hilbert map generator (refresh to generate a new map)",
+      "link": "http://bl.ocks.org/fabiovalse/raw/c25191e52406903b4cd9aede7d51ab5e",
+      "code": "http://bl.ocks.org/fabiovalse/c25191e52406903b4cd9aede7d51ab5e",
+      "img": "hilbert_map.png"
+    },
+    {
+      "type": "gist",
+      "label": "Zoomable italian SVG political map",
+      "link": "https://bl.ocks.org/fabiovalse/raw/546e3a5080dc6d6f86b08d5635929d1c",
+      "code": "https://bl.ocks.org/fabiovalse/546e3a5080dc6d6f86b08d5635929d1c",
+      "img": "political_map.png"
+    },
+    {
+      "type": "gist",
+      "label": "Zoomable DBpedia instance similarity analysis",
+      "link": "http://bl.ocks.org/fabiovalse/raw/cc44f1a671e3ce135775",
+      "code": "http://bl.ocks.org/fabiovalse/cc44f1a671e3ce135775",
+      "img": "instance_similarity.png"
+    },
+    {
+      "type": "gist",
+      "label": "Dijkstra running on a node-link diagram",
+      "link": "https://bl.ocks.org/fabiovalse/raw/03d07b071257987add9a7ba28a4befb5",
+      "code": "https://bl.ocks.org/fabiovalse/03d07b071257987add9a7ba28a4befb5",
+      "img": "dijkstra.png"
+    },
+    {
+      "type": "gist",
+      "label": "Solar system representation",
+      "link": "https://bl.ocks.org/fabiovalse/raw/96f1c7575f6a66facc34a7d8408287f0/",
+      "code": "https://bl.ocks.org/fabiovalse/96f1c7575f6a66facc34a7d8408287f0/",
+      "img": "solar_system.png"
+    },
+    {
+      "type": "gist",
+      "label": "Chinese radical table",
+      "link": "https://bl.ocks.org/fabiovalse/raw/8caa4886c800fe56ec3aeaad289b5998",
+      "code": "https://bl.ocks.org/fabiovalse/8caa4886c800fe56ec3aeaad289b5998",
+      "img": "chinese_radicals.png"
     }
   ]
 }
