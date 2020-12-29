@@ -243,7 +243,10 @@ d3.json 'data.json', (error, data) ->
         when 'Publication' then "@ #{d.conference}, #{d.location}, #{d.date}"
         when 'Education'   then "@ #{d.location}"
         when 'Experience'
-          if d.location? then "@ #{d.location}, #{d.place}" else ""
+          """
+          #{if d.location? then "@ #{d.location}, #{d.place}" else ""}
+          #{if d.technologies? then "<br />> #{d.technologies.join(' - ')}" else ""}
+          """
         when 'Project'     then "> #{d.technologies.join(' - ')}"
 
   en_items.append 'div'
