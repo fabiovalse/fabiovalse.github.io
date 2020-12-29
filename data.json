@@ -1,5 +1,5 @@
 {
-  "bio": "I'm a software developer at VxFiber in Milan. My activities regards the design and development of Web applications based on modern Web technologies. Previously I worked at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) of Pisa. I received my Ph.D. in Information Engineering from the University of Pisa presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies.",
+  "bio": "I'm a software developer at VXFiber in Milan. My activities regards the design and development of Web applications based on modern Web technologies. Previously I worked at the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR) of Pisa. I received my Ph.D. in Information Engineering from the University of Pisa presenting a thesis about the visualization of Semantic Web data. My interests are mainly focused on data analysis, visualization and Web technologies.",
   "nodes": [
     {
       "type": "Education",
@@ -40,11 +40,12 @@
     },
     {
       "type": "Experience",
-      "label": "Software developer",
-      "short_label": "VxFiber",
-      "location": "VxFiber",
+      "label": "Senior Software Team Leader",
+      "short_label": "VXFiber",
+      "location": "VXFiber",
       "place": "Milan",
-      "description": "Design and development of Web applications based on modern Web technologies.",
+      "description": "Design and development of Web applications based on modern Web technologies for VXFiber, a digital infrastructure specialist, with more than 20 years’ experience building full fibre FTTP (fibre-to-the-premises) Open Access Networks.",
+      "technologies": ["React", "Redux", "Redux-Saga", "React Router", "React Hooks", "NPM", "Webpack", "Camunda BPM", "Stripe", "Cordova", "D3", "React Intl", "React Hook Form", "Redux Form", "Material UI", "Semantic React UI", "Sentry", "..."],
       "timerange": {
         "start": "January 2018",
         "end": "Present"
