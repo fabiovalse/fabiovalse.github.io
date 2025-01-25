@@ -10,7 +10,7 @@ export default function Footer() {
           flexDirection: "column"
         }}
       >
-        <div style={{ padding: "24px 0px" }}>
+        <div style={{ padding: 24 }}>
           <div>
             Designed and developed by <strong>Fabio Valsecchi</strong>
           </div>
