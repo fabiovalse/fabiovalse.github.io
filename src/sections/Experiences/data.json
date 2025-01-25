@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Senior Software Team Leader",
+    "short_label": "VXFiber",
+    "location": "VXFiber",
+    "place": "Milan",
+    "description": "My activities are mainly focused on design, develop and deliver features across the different applications provided by the company. Leading a small team of developers across Sweden and Italy. Working closely with backend teams to integrate front end code with GraphQL and REST APIs. Collecting requirements from international stakeholders and analyzing how to provide efficient solutions.",
+    "timerange": {
+      "start": "January 2018",
+      "end": "Present"
+    }
+  },
+  {
+    "label": "Web Developer & Research Fellow",
+    "short_label": "CNR",
+    "location": "National Research Council (CNR)",
+    "place": "Pisa",
+    "description": "My activities were primarily focused on design and develop Web applications. I participated in different projects written in Javascript, VueJS and D3JS. I extensively worked with data. Projects had a preliminary analysis and management stage followed by a design and implementation of interactive visualization using different kinds of Web technologies like D3, Vue and Three.",
+    "timerange": {
+      "start": "August 2013",
+      "end": "January 2018"
+    }
+  }
+]

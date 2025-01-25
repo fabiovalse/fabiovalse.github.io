@@ -1,0 +1,36 @@
+[
+  {
+    "label": "Ph.D. in Information Engineering",
+    "short_label": "Ph.D.",
+    "location": "University of Pisa",
+    "description": "My thesis, titled \"Interactive Visualization of Semantic Web Data\", presents a method, based on the use of cartographic principles and space-filling curves, for visually representing and exploring Linked Data sets as they were traditional geographic maps.",
+    "timerange": {
+      "start": "October 2013",
+      "end": "January 2017"
+    },
+    "thesis": "PhD_thesis.pdf",
+    "imgs": ["dbpedia.png", "linkedmdb.png"]
+  },
+  {
+    "label": "Master Degree in Computer Science",
+    "short_label": "Master Degree",
+    "location": "University of Trento",
+    "description": "My thesis, titled \"Spacetime: A Two Dimensions Search and Visualisation Engine Based on Linked Data\", proposes a tool for searching specific entities coming from DBpedia and visualizing it in a spatio-temporal way.",
+    "timerange": {
+      "start": "October 2011",
+      "end": "July 2013"
+    },
+    "thesis": "MasterDegree_thesis.pdf"
+  },
+  {
+    "label": "Bachelor Degree in Computer Science",
+    "short_label": "Bachelor Degree",
+    "location": "University of Milano Bicocca",
+    "description": "I worked on a thesis focused on pedestrian dynamics, a research area studying pedestrian behaviours. The thesis describes a comparative development of virtual simulations performed using different software. The specific case of a bridge in the area of Porta Genova in Milan has been developed during the crowdy event of the Salone del Mobile.",
+    "timerange": {
+      "start": "October 2008",
+      "end": "July 2011"
+    },
+    "thesis": "BachelorDegree_thesis.pdf"
+  }
+]
