@@ -1,5 +1,18 @@
 [
   {
+    "type": "Experience",
+    "label": "Frontend Software Engineer",
+    "short_label": "Crunch",
+    "location": "Crunch/YouGov",
+    "place": "Remote",
+    "description": "Development of Crunch.io, a powerful and intuitive survey data management for brands and suppliers.",
+    "technologies": ["React", "Redux", "Redux-Saga"],
+    "timerange": {
+      "start": "November 2025",
+      "end": "Present"
+    }
+  },
+  {
     "label": "Senior Software Team Leader",
     "short_label": "VXFiber",
     "location": "VXFiber",
@@ -7,7 +20,7 @@
     "description": "My activities are mainly focused on design, develop and deliver features across the different applications provided by the company. Leading a small team of developers across Sweden and Italy. Working closely with backend teams to integrate front end code with GraphQL and REST APIs. Collecting requirements from international stakeholders and analyzing how to provide efficient solutions.",
     "timerange": {
       "start": "January 2018",
-      "end": "Present"
+      "end": "October 2025"
     }
   },
   {

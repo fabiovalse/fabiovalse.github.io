@@ -17,6 +17,7 @@ export default function NavBar({ items }) {
             style={{
               fontWeight: 800,
               fontSize: 18,
+              cursor: 'pointer',
               letterSpacing: "3px",
               color: "var(--red)",
               textDecoration: "none"
