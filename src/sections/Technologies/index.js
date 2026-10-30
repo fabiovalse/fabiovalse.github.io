@@ -1,152 +1,96 @@
+const toolkitData = [
+  { category: 'Core', items: ['React', 'TypeScript', 'React Router'] },
+  { category: 'State', items: ['Zustand', 'React Context', 'Redux'] },
+  { category: 'Forms', items: ['React Hook Form'] },
+  { category: 'i18n', items: ['React Intl'] },
+  { category: 'UI', items: ['Material UI'] },
+  { category: 'Data Viz', items: ['D3.js'] },
+  { category: 'Monitoring', items: ['Sentry', 'Web Vitals'] },
+  { category: 'Payments', items: ['Stripe'] },
+  { category: 'Build', items: ['npm', 'Webpack', 'Vite'] },
+];
+
 export default function Technologies({ id }) {
   return (
-    <div id={id} style={{ background: "var(--text-primary)" }}>
-      <div style={{ maxWidth: 600, padding: "100px 24px", margin: "auto" }}>
+    <section
+      id={id}
+      style={{
+        backgroundColor: 'var(--color-bg-dark)',
+        padding: 'var(--space-12) 0',
+      }}
+    >
+      <div className="container">
+        {/* Section Header */}
+        <div style={{ marginBottom: 'var(--space-10)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-4xl)',
+              fontWeight: 800,
+              marginBottom: 'var(--space-2)',
+              letterSpacing: '-0.02em',
+              color: 'white',
+            }}
+          >
+            Toolkit
+          </h2>
+          <p
+            style={{
+              fontSize: 'var(--text-lg)',
+              color: 'var(--color-text-tertiary)',
+            }}
+          >
+            How do I typically built Web apps?
+          </p>
+        </div>
+
+        {/* Tech Grid */}
         <div
           style={{
-            fontSize: "42px",
-            fontWeight: 600,
-            color: "white"
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+            gap: 'var(--space-5)',
           }}
         >
-          Toolkit
-        </div>
-
-        <div style={{ color: "var(--red)" }}>
-          How do I typically build a Web app?
-        </div>
-
-        <div style={{ fontSize: 24, color: "white" }}>
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Favourite framework? </div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>React JS</div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>What about other essentials? </div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Typescript and React-Router
+          {toolkitData.map((group) => (
+            <div
+              key={group.category}
+              style={{
+                padding: 'var(--space-5)',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                borderRadius: 'var(--radius-lg)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  color: 'var(--color-accent-light)',
+                  marginBottom: 'var(--space-3)',
+                }}
+              >
+                {group.category}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    style={{
+                      fontSize: 'var(--text-lg)',
+                      fontWeight: 600,
+                      color: 'white',
+                    }}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Centralized store?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Zustand or React Context
-            </div>
-            <br />
-            <div>Zu what? What about Redux?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>No more</div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Lot of forms to handle?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              React-Hook-Form
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Multilinguism?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              React-Intl
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>What about the UI?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Material-UI
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Exceptions and performances?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Sentry and Web Vitals
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Data Visualization?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>D3</div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>Have you ever worked with payments?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Yep, Stripe
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "48px 0px",
-              borderLeft: "2px solid #DFE3E8",
-              paddingLeft: 24
-            }}
-          >
-            <div>What else?</div>
-            <div style={{ fontWeight: 600, color: "var(--red)" }}>
-              Yeah, of course NPM and Webpack
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

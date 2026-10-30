@@ -4,74 +4,124 @@ import './index.css';
 
 export default function Gists({ id }) {
   return (
-    <>
-      <div id={id} style={{ maxWidth: 600, padding: "100px 0px 24px 0px", margin: "auto" }}>
-        <div
+    <section
+      id={id}
+      style={{
+        backgroundColor: 'white',
+        padding: 'var(--space-12) 0',
+      }}
+    >
+      {/* Section Header */}
+      <div className="container" style={{ marginBottom: 'var(--space-10)' }}>
+        <h2
           style={{
-            fontSize: 42,
-            fontWeight: 600
+            fontSize: 'var(--text-4xl)',
+            fontWeight: 800,
+            marginBottom: 'var(--space-2)',
+            letterSpacing: '-0.02em',
           }}
         >
           Gists
-        </div>
-
-        <div style={{ color: "var(--text-secondary)" }}>
+        </h2>
+        <p
+          style={{
+            fontSize: 'var(--text-lg)',
+            color: 'var(--color-text-secondary)',
+          }}
+        >
           Remember github gists hosted on bl.ocks?
-        </div>
+        </p>
       </div>
 
+      {/* Gist Groups */}
       {groups.map(({ group, gists }) => (
-        <div key={group} style={{ padding: "48px", margin: "auto" }}>
-          
-          {
-            group &&
-              <>
-                <div style={{ fontSize: 30, fontWeight: 600, maxWidth: 600, margin: "auto", marginBottom: '16px', marginTop: '32px' }}>
-                  {group}
+        <div key={group || 'ungrouped'} style={{ marginBottom: 'var(--space-10)' }}>
+          {group && (
+            <div className="container" style={{ marginBottom: 'var(--space-5)' }}>
+              <h3
+                style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 700,
+                  color: 'var(--color-text)',
+                }}
+              >
+                {group}
+              </h3>
+            </div>
+          )}
 
-                  <div
-                    style={{
-                      width: "100px",
-                      margin: "16px 0px 48px 0px",
-                      borderBottom: "3px solid var(--red)",
-                    }}
-                  />
-                </div>
-              </>
-          }
-          
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', justifyContent: 'center' }}>
-            {gists
-              .sort((a,b) => a.created_at > b.created_at ? 1 :-1)
-              .map(gist => {
-                const thumbnail = getThumbnail(gist.files);
+          <div className="container-wide">
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                gap: 'var(--space-5)',
+              }}
+            >
+              {gists
+                .sort((a, b) => (a.created_at > b.created_at ? 1 : -1))
+                .map((gist) => {
+                  const thumbnail = getThumbnail(gist.files);
 
-                return (
-                  <Link key={gist.id} to={`/gist/${gist.id}`} className="gist-card" style={{ width: 200, textDecoration: 'none', color: 'inherit' }}>
-                    <div className="gist-thumbnail" style={{ width: 200, height: 200, overflow: 'hidden', background: '#f0f0f0', borderRadius: '8px' }}>
-                      {thumbnail && (
-                        <img
-                          src={thumbnail.raw_url}
-                          alt={gist.description || "gist preview"}
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        />
-                      )}
-                    </div>
-                    <div style={{ fontSize: 18, fontWeight: 600, marginTop: 8 }}>{gist.description || "Untitled gist"}</div>
-                  </Link>
-                );
-              })
-            }
+                  return (
+                    <Link
+                      key={gist.id}
+                      to={`/gist/${gist.id}`}
+                      className="gist-card"
+                      style={{
+                        display: 'block',
+                        textDecoration: 'none',
+                        color: 'inherit',
+                      }}
+                    >
+                      <div
+                        className="gist-thumbnail"
+                        style={{
+                          aspectRatio: '1',
+                          overflow: 'hidden',
+                          backgroundColor: 'var(--color-bg-alt)',
+                          borderRadius: 'var(--radius-lg)',
+                          border: '1px solid var(--color-border)',
+                        }}
+                      >
+                        {thumbnail && (
+                          <img
+                            src={thumbnail.raw_url}
+                            alt={gist.description || 'gist preview'}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              transition: 'transform var(--transition-slow)',
+                            }}
+                          />
+                        )}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 'var(--text-base)',
+                          fontWeight: 600,
+                          marginTop: 'var(--space-3)',
+                          lineHeight: 1.4,
+                          color: 'var(--color-text)',
+                        }}
+                      >
+                        {gist.description || 'Untitled gist'}
+                      </div>
+                    </Link>
+                  );
+                })}
+            </div>
           </div>
         </div>
       ))}
-    </>
+    </section>
   );
 }
 
 function getThumbnail(files) {
   const fileList = Object.values(files);
-  return fileList.find(file =>
+  return fileList.find((file) =>
     /thumb|preview|screenshot|thumbnail/i.test(file.filename)
   );
 }

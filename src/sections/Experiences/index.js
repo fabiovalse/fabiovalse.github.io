@@ -2,61 +2,53 @@ import data from "./data.json";
 
 export default function Experiences({ id }) {
   return (
-    <div id={id} style={{ background: "var(--lightgray)" }}>
-      <div style={{ maxWidth: 600, padding: "100px 24px", margin: "auto" }}>
-        <div
-          style={{
-            fontSize: 42,
-            fontWeight: 600
-          }}
-        >
-          Experiences
+    <section
+      id={id}
+      style={{
+        backgroundColor: 'var(--color-bg-alt)',
+        padding: 'var(--space-12) 0',
+      }}
+    >
+      <div className="container">
+        {/* Section Header */}
+        <div style={{ marginBottom: 'var(--space-10)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-4xl)',
+              fontWeight: 800,
+              marginBottom: 'var(--space-2)',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Experience
+          </h2>
+          <p
+            style={{
+              fontSize: 'var(--text-lg)',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            What did I do in the last years?
+          </p>
         </div>
 
-        <div style={{ color: "var(--text-secondary)" }}>
-          What did I do in the last years?
+        {/* Timeline */}
+        <div className="timeline">
+          {data.map((item) => (
+            <div key={item.short_label} className="timeline-item">
+              <div className="timeline-date">
+                {item.timerange.start} — {item.timerange.end}
+              </div>
+              <h3 className="timeline-title">{item.label}</h3>
+              <div className="timeline-location">
+                {item.place && `${item.place} · `}
+                {item.location}
+              </div>
+              <p className="timeline-description">{item.description}</p>
+            </div>
+          ))}
         </div>
-
-        {data.map((item) => (
-          <div key={item.short_label} style={{ padding: "50px 0px" }}>
-            <div
-              style={{
-                fontWeight: 600,
-                fontSize: 16,
-                letterSpacing: "3px",
-                color: "var(--red)"
-              }}
-            >
-              {item.timerange.start.toUpperCase()} -{" "}
-              {item.timerange.end.toUpperCase()}
-            </div>
-
-            <div
-              style={{
-                fontSize: 30,
-                fontWeight: 600,
-                margin: "8px 0px"
-              }}
-            >
-              {item.label}
-            </div>
-
-            <div style={{ fontWeight: 600, color: "var(--text-secondary)" }}>
-              {item.place} @{item.location}
-            </div>
-
-            <div
-              style={{
-                width: "100px",
-                margin: "16px 0px",
-                borderBottom: "3px solid var(--red)"
-              }}
-            />
-
-            <div>{item.description}</div>
-          </div>
-        ))}
       </div>
-    </div>
+    </section>
   );
 }

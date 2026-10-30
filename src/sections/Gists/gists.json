@@ -4162,6 +4162,7 @@
         "node_id": "MDQ6R2lzdDE2ZjJkZGE5NTZkNzYzMmUwZDUzZjc5YjkzYzA2MGVl",
         "created_at": "2016-12-20T08:56:53Z",
         "updated_at": "2016-12-20T12:13:52Z",
+        "zoom_and_pan": true,
         "files": {
           "README.md": {
             "filename": "README.md",
@@ -4948,6 +4949,7 @@
         "node_id": "MDQ6R2lzdGI5MjI0YmZkNjRjYTk2YzQ3ZjhjZGNiNTdiMzViOGUy",
         "created_at": "2016-12-19T08:33:47Z",
         "updated_at": "2016-12-19T15:27:24Z",
+        "zoom_and_pan": true,
         "files": {
           "README.md": {
             "filename": "README.md",
@@ -5001,6 +5003,7 @@
         "node_id": "MDQ6R2lzdDU4NTJhMmY1MmEwNGNjNDJkMGE5OWMxZThhZjczOWE3",
         "created_at": "2016-12-15T14:43:58Z",
         "updated_at": "2016-12-16T16:01:52Z",
+        "zoom_and_pan": true,
         "files": {
           "README.md": {
             "filename": "README.md",

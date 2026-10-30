@@ -1,22 +1,22 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
-import Start from "./Start";
-import Educations from "./sections/Education";
-import Experiences from "./sections/Experiences";
-import Technologies from "./sections/Technologies";
-import Gists from "./sections/Gists";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+import Start from './Start';
+import Educations from './sections/Education';
+import Experiences from './sections/Experiences';
+import Technologies from './sections/Technologies';
+import Gists from './sections/Gists';
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 const sections = [
-  { id: "exp", label: "Exp" },
-  { id: "edu", label: "Edu" },
-  { id: "tkit", label: "Tkit" },
-  { id: "gists", label: "Gists" }
+  { id: 'exp', label: 'Experience' },
+  { id: 'edu', label: 'Education' },
+  { id: 'tkit', label: 'Toolkit' },
+  { id: 'gists', label: 'Gists' },
 ];
 
 export function Home() {
   return (
-    <div>
+    <div style={{ backgroundColor: 'var(--color-bg)' }}>
       <NavBar items={sections} />
       <Start />
       <Experiences id={sections[0].id} />

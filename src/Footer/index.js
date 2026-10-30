@@ -1,52 +1,90 @@
 export default function Footer() {
   return (
-    <div style={{ backgroundColor: "var(--yellow)" }}>
-      <div
-        style={{
-          maxWidth: 600,
-          margin: "auto",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column"
-        }}
-      >
-        <div style={{ padding: 24 }}>
-          <div>
-            Designed and developed by <strong>Fabio Valsecchi</strong>
+    <footer
+      style={{
+        backgroundColor: 'var(--color-bg-alt)',
+        borderTop: '1px solid var(--color-border)',
+        padding: 'var(--space-8) 0',
+      }}
+    >
+      <div className="container">
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--space-5)',
+          }}
+        >
+          {/* Main credit */}
+          <div
+            style={{
+              fontSize: 'var(--text-base)',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            Designed and developed by{' '}
+            <span style={{ fontWeight: 600, color: 'var(--color-text)' }}>
+              Fabio Valsecchi
+            </span>
           </div>
 
-          <div style={{ padding: "24px 0px", fontSize: 14 }}>
-            <div style={{ marginBottom: 8 }}>Icon attributions:</div>
-            <div>
+          {/* Attributions */}
+          <div
+            style={{
+              fontSize: 'var(--text-sm)',
+              color: 'var(--color-text-tertiary)',
+            }}
+          >
+            <div style={{ marginBottom: 'var(--space-2)', fontWeight: 500 }}>
+              Icon attributions
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 'var(--space-3)',
+              }}
+            >
               <a
                 href="https://www.flaticon.com/free-icons/imagination"
                 title="imagination icons"
-                style={{ color: "var(--text-primary)" }}
+                style={{
+                  color: 'var(--color-text-tertiary)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                }}
               >
-                Imagination icons created by Freepik - Flaticon
+                Imagination
               </a>
-            </div>
-            <div>
+              <span>·</span>
               <a
                 href="https://www.flaticon.com/free-icons/software-development"
                 title="software development icons"
-                style={{ color: "var(--text-primary)" }}
+                style={{
+                  color: 'var(--color-text-tertiary)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                }}
               >
-                Software development icons created by Freepik - Flaticon
+                Software development
               </a>
-            </div>
-            <div>
+              <span>·</span>
               <a
                 href="https://www.flaticon.com/free-icons/graphic-design"
                 title="graphic design icons"
-                style={{ color: "var(--text-primary)" }}
+                style={{
+                  color: 'var(--color-text-tertiary)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                }}
               >
-                Graphic design icons created by Freepik - Flaticon
+                Graphic design
               </a>
+              <span style={{ marginLeft: 'var(--space-1)' }}>— Freepik via Flaticon</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

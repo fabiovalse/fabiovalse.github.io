@@ -2,78 +2,83 @@ import data from "./data.json";
 
 export default function Education({ id }) {
   return (
-    <div id={id} style={{ maxWidth: 600, padding: "0px 24px", margin: "auto" }}>
-      <div style={{ margin: "100px 0px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            <div
-              style={{
-                fontSize: 42,
-                fontWeight: 600,
-                color: "var(--red)"
-              }}
-            >
-              Education
-            </div>
-
-            <div style={{ color: "var(--text-secondary)" }}>
-              What&apos;s my background?
-            </div>
-          </div>
+    <section
+      id={id}
+      style={{
+        backgroundColor: 'white',
+        padding: 'var(--space-12) 0',
+      }}
+    >
+      <div className="container">
+        {/* Section Header */}
+        <div style={{ marginBottom: 'var(--space-10)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-4xl)',
+              fontWeight: 800,
+              marginBottom: 'var(--space-2)',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Education
+          </h2>
+          <p
+            style={{
+              fontSize: 'var(--text-lg)',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            What&apos;s my background?
+          </p>
         </div>
 
-        <div
-          style={{
-            padding: 24,
-            marginTop: 8,
-            backgroundColor: "var(--yellow)"
-          }}
-        >
-          {data.map((item, index) => (
-            <div key={item.short_label}>
+        {/* Education Cards */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+          {data.map((item) => (
+            <div
+              key={item.short_label}
+              style={{
+                padding: 'var(--space-6)',
+                backgroundColor: 'var(--color-bg-accent-soft)',
+                borderRadius: 'var(--radius-lg)',
+                borderLeft: '3px solid var(--color-accent)',
+              }}
+            >
               <div
                 style={{
-                  fontSize: 16,
+                  fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  letterSpacing: "3px",
-                  color: "var(--red)"
+                  color: 'var(--color-accent)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  marginBottom: 'var(--space-2)',
                 }}
               >
-                {item.timerange.start.toUpperCase()} -{" "}
-                {item.timerange.end.toUpperCase()}
+                {item.timerange.start} — {item.timerange.end}
               </div>
-
-              <div
+              <h3
                 style={{
-                  fontSize: 32,
-                  fontWeight: 600,
-                  margin: "8px 0px"
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-1)',
+                  letterSpacing: '-0.01em',
                 }}
               >
                 {item.label}
-              </div>
-
+              </h3>
               <div
                 style={{
-                  fontWeight: 600,
-                  color: "var(--text-secondary)"
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--color-text-secondary)',
+                  fontWeight: 500,
                 }}
               >
                 {item.location}
               </div>
-
-              {index < data.length - 1 && (
-                <div
-                  style={{
-                    borderBottom: "2px solid var(--red)",
-                    margin: "36px 0px"
-                  }}
-                />
-              )}
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,8 +1,20 @@
-.gist-card .gist-thumbnail {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-radius: 8px;
+/* Gist Card Interactions */
+.gist-card {
+  transition: transform var(--transition-base);
 }
-.gist-card:hover .gist-thumbnail {
+
+.gist-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gist-card .gist-thumbnail {
+  transition: box-shadow var(--transition-base);
+}
+
+.gist-card:hover .gist-thumbnail {
+  box-shadow: var(--shadow-lg);
+}
+
+.gist-card:hover .gist-thumbnail img {
+  transform: scale(1.05);
 }
