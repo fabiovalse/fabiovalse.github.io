@@ -1,5 +1,6 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Start from './Start';
+import LiveProjects from './sections/LiveProjects';
 import Educations from './sections/Education';
 import Experiences from './sections/Experiences';
 import Technologies from './sections/Technologies';
@@ -11,6 +12,7 @@ const sections = [
   { id: 'exp', label: 'Experience' },
   { id: 'edu', label: 'Education' },
   { id: 'tkit', label: 'Toolkit' },
+  { id: 'live', label: 'Viz' },
   { id: 'gists', label: 'Gists' },
 ];
 
@@ -22,7 +24,8 @@ export function Home() {
       <Experiences id={sections[0].id} />
       <Educations id={sections[1].id} />
       <Technologies id={sections[2].id} />
-      <Gists id={sections[3].id} />
+      <LiveProjects id={sections[3].id} />
+      <Gists id={sections[4].id} />
       <Footer />
     </div>
   );
